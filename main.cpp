@@ -399,9 +399,9 @@ MAP MapDataKind[5];
 CHARAIMAGE CharaImage;		//キャラの画像
 CHARADATA  Myplayer;		//キャラのデータ
 
-CHARAIMAGE bossimage;             //ボスの画像
+CHARAIMAGE Bossimage;             //ボスの画像
 BOSS  oni;
-BOSS boss[GAME_BOSS_NUM];   //ボス
+//BOSS boss;   //ボス
 //アイテム系
 int MapKaidanKind[GAME_MAP_KAIDAN] = { 5 };	//階段の番号
 
@@ -555,7 +555,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		return -1;
 	}
 
-	if (MY_GAZOU_LOAD(&Boss, 0, 0, GAME_ENE_BOSS_IMAGE) == FALSE) {  //BOSSを読み込む
+	if (MY_CHARA_LOAD_BUNKATSU(&Bossimage, GAME_ENE_BOSS_BUN_YOKO_CNT*GAME_ENE_BOSS_BUN_TATE_CNT, GAME_ENE_BOSS_BUN_YOKO_CNT, GAME_ENE_BOSS_BUN_TATE_CNT, GAME_ENE_BOSS_YOKO_SIZE, GAME_ENE_BOSS_TATE_SIZE, GAME_ENE_BOSS_IMAGE) == FALSE) {   //GAME_CHARAを読み込む
 		MessageBox(NULL, GAME_ENE_BOSS_IMAGE, "NotFound", MB_OK);
 		return -1;
 	}
@@ -1668,6 +1668,8 @@ BOOL MY_CHARA_LOAD_BUNKATSU(CHARAIMAGE *c, int bun_num, int bun_x_num, int bun_y
 	return TRUE;
 }
 
+
+
 //########## マップ(F1)判定の種類を設定する ########
 BOOL MY_MAP_READ_CSV_KIND_SET(MAP *mapdata)
 
@@ -2139,7 +2141,7 @@ VOID MY_PLAY_ENEMY_OPERATION_DETAIL(BOSS *boss)
 //########## 敵を操作する関数 ##########
 VOID MY_PLAY_ENEMY_OPERATION(VOID)
 {
-	MY_PLAY_ENEMY_OPERATION_DETAIL(&boss[0]);	//bossの先頭アドレスを入れる
+	MY_PLAY_ENEMY_OPERATION_DETAIL(&oni);	//bossの先頭アドレスを入れる
 
 	return;
 }
