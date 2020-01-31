@@ -21,13 +21,18 @@
 #define GAME_TITLEIMAGE "TITLEIMAGE\\Title.png"						//ƒ^ƒCƒgƒ‹‰æ‘œ
 #define GAME_TITLE_BACKIMAGE "BACKIMAGE\\TITLE_BACK.jpg"			//ƒ^ƒCƒgƒ‹”wŒi‰æ‘œ
 
-#define GAME_PROLOGUE "BACKIMAGE\\PROLOGUE.jpg"							//ƒvƒƒ[ƒO
+#define GAME_PROLOGUE "BACKIMAGE\\PROLOGUE.png"						//ƒvƒƒ[ƒO
+
+#define GAME_MUSIC_OP        "MUSIC\\op.mp3"        //ƒ^ƒCƒgƒ‹‰æ–ÊBGM
+#define GAME_MUSIC_MAP_BGM   "MUSIC\\MAP_BGM.mp3"   //“¹’†BGM
+#define GAME_MUSIC_BOSS      "MUSIC\\BOSS_BGM.mp3"  //BOSSBGM
 
 
 #define GAME_MAP_1 "GAME_MAP\\A2.png"           //ƒ}ƒbƒvƒ`ƒbƒv‚Ì‰æ‘œ
 #define GAME_MAP_2 "GAME_MAP\\Cave1-EarthA5.png"
 #define GAME_MAP_3 "GAME_MAP\\Cave1-RockA5.png"
 #define GAME_MAP_4 "GAME_MAP\\Ruin-F.png"
+#define ITEM       "ITEMIMAGE\\ITEM.png"  //ƒAƒCƒeƒ€‚Ì‰æ‘œ
 
 //ƒ}ƒbƒv‚Ìcsv
 #define GAME_MAP_CSV_1 "GAME_MAP\\F1.csv"				//1ŠK
@@ -35,12 +40,21 @@
 #define GAME_MAP_CSV_3 "GAME_MAP\\F3.csv"				//3ŠK
 #define GAME_MAP_CSV_4 "GAME_MAP\\F4.csv"				//4ŠK
 #define GAME_MAP_CSV_5 "GAME_MAP\\Boss.csv"				//ƒ{ƒX
+
 #define GAME_MAP_CSV_6 "GAME_MAP\\map_under.csv"		//map‰º’n
+
 #define GAME_MAP_CSV_7 "GAME_MAP\\Bossmap_under.csv"	//ƒ{ƒXmap‰º’n
+
 #define GAME_MAP_CSV_1_K "GAME_MAP\\kaidan.csv"			//1ŠK‚ÌŠK’i
 #define GAME_MAP_CSV_2_K "GAME_MAP\\kaidan2.csv"		//2ŠK‚ÌŠK’i
 #define GAME_MAP_CSV_3_K "GAME_MAP\\kaidan3.csv"		//3ŠK‚ÌŠK’i
 #define GAME_MAP_CSV_4_K "GAME_MAP\\kaidan4.csv"		//4ŠK‚ÌŠK’i
+
+#define GAME_MAP_CSV_1_A "GAME_MAP\\F1atari.csv"        //1ŠK‚Ì“–‚½‚è”»’è
+#define GAME_MAP_CSV_2_A "GAME_MAP\\F2atari.csv"		//2ŠK‚Ì“–‚½‚è”»’è
+#define GAME_MAP_CSV_3_A  "GAME_MAP\\F3atari.csv"		//3ŠK‚Ì“–‚½‚è”»’è
+#define GAME_MAP_CSV_4_A  "GAME_MAP\\F4atari.csv"		//4ŠK‚Ì“–‚½‚è”»’è
+#define GAME_MAP_CSV_BOSS "GAME_MAP\\bossatari.csv"		//ƒ{ƒXmap‚Ì“–‚½‚è”»’è
 
 //ƒ}ƒbƒv‚Ì–¼Ì
 #define GAME_MAP_NAME_SITA		"MAPDATA_SITA"
@@ -49,6 +63,10 @@
 #define GAME_MAP_F3				"MAPDATA_F3"
 #define GAME_MAP_F4				"MAPDATA_F4"
 #define GAME_MAP_F1_K			"MAPDATA_F1_KAIDAN"
+#define GAME_MAP_F2_K			"MAPDATA_F2_KAIDAN"
+#define GAME_MAP_F3_K			"MAPDATA_F3_KAIDAN"
+#define GAME_MAP_F4_K			"MAPDATA_F4_KAIDAN"
+#define GAME_MAP_F1_ITEM		"MAPDATA_F1_ITEM"
 #define GAME_MAP_BOSS_SITA		"MAPDATA_BOSS_UNDER"
 #define GAME_MAP_BOSS			"MAPDATA_BOSS"
 
@@ -76,18 +94,59 @@
 #define GAME_MAP_OK_KIND 100 //’Ês‚Å‚«‚éƒ}ƒbƒv‚ÌŽí—Þ
 #define GAME_MAP_NG_KIND 100 //’Ês‚Å‚«‚È‚¢ƒ}ƒbƒv‚ÌŽí—Þ
 
+#define GAME_MAP_KAIDAN 4    //ŠK’i‚Ì”
+
 #define GAME_CHARA                "CHARAIMAGE\\char_p04.png"  //ƒLƒƒƒ‰‚Ì‰æ‘œ
 #define GAME_CHARA_BUN_YOKO_CNT 12		//ƒLƒƒƒ‰‚Ì•ªŠ„”(‰¡)
 #define GAME_CHARA_BUN_TATE_CNT 8       //ƒLƒƒƒ‰‚Ì•ªŠ„”(c)
 #define GAME_CHARA_YOKO_SIZE 24			//ƒLƒƒƒ‰‚Ì‘å‚«‚³(‰¡)
 #define GAME_CHARA_TATE_SIZE 32			//ƒLƒƒƒ‰‚Ì‘å‚«‚³(c)
 #define GAME_CHARA_MOTION_NUM 12		//ƒLƒƒƒ‰‚Ì‰æ‘œ”
-#define GAME_CHARA_KIND_YOKO 3		//ƒLƒƒƒ‰‚Ì‰¡‚ÌŽí—Þ
-#define GAME_CHARA_KIND_TATE 4		//ƒLƒƒƒ‰‚Ìc‚ÌŽí—Þ
+#define GAME_CHARA_KIND_YOKO 3		    //ƒLƒƒƒ‰‚Ì‰¡‚ÌŽí—Þ
+#define GAME_CHARA_KIND_TATE 4		    //ƒLƒƒƒ‰‚Ìc‚ÌŽí—Þ
 
-#define GAME_CHARA_START_X 5	    //ƒLƒƒƒ‰‚ÌÅ‰‚ÌˆÊ’u
-#define GAME_CHARA_START_Y 1       //ƒLƒƒƒ‰‚ÌÅ‰‚ÌˆÊ’u
-#define GAME_CHARA_SPEED 2         //ƒLƒƒƒ‰‚ÌƒXƒs[ƒh
+#define GAME_CHARA_START_X 5	       //ƒLƒƒƒ‰‚ÌÅ‰‚ÌˆÊ’u
+#define GAME_CHARA_START_Y 2           //ƒLƒƒƒ‰‚ÌÅ‰‚ÌˆÊ’u
+#define GAME_CHARA_SPEED 2             //ƒLƒƒƒ‰‚ÌƒXƒs[ƒh
+
+#define GAME_PLAYER_ITEM_MAX 100  //ƒvƒŒƒCƒ„[‚ÌƒAƒCƒeƒ€•ÛŽMAX
+
+
+//ƒAƒCƒeƒ€ŠÖ˜A
+#define GAME_ITEMIMAGE_CSV_1   "ITEMIMAGE\\F1_ƒAƒCƒeƒ€.csv"  //1ŠK‚ÌƒAƒCƒeƒ€
+#define GAME_ITEM_BUN_YOKO_CNT 4		//ƒAƒCƒeƒ€‚Ì•ªŠ„”(‰¡)
+#define GAME_ITEM_BUN_TATE_CNT 4		//ƒAƒCƒeƒ€‚Ì•ªŠ„”(c)
+#define GAME_ITEM_YOKO_SIZE 32			//ƒAƒCƒeƒ€‚Ì‘å‚«‚³(‰¡)
+#define GAME_ITEM_TATE_SIZE 32			//ƒAƒCƒeƒ€‚Ì‘å‚«‚³(c)
+
+
+#define GAME_MAP_KIND		5
+#define GAME_MAP_ITEM_KIND	4			//ƒAƒCƒeƒ€‚ÌŽí—Þ
+
+//“GŠÖ˜A
+
+#define GAME_ENE_COBRA_IMAGE   "ENEIMAGE\\cobras.png"
+
+#define GAME_ENE_BOSS_IMAGE    "ENEIMAGE\\oni.png"    //BOSS‚Ì‰æ‘œ
+
+#define GAME_BOSS_FIRST_MUKI_D 0 //Å‰‚Ì‰æ‘œ‚ÌŒü‚«(‰º)
+#define GAME_BOSS_FIRST_MUKI_L 3 //Å‰‚Ì‰æ‘œ‚ÌŒü‚«(¶)
+#define GAME_BOSS_FIRST_MUKI_R 6 //Å‰‚Ì‰æ‘œ‚ÌŒü‚«(‰E)
+#define GAME_BOSS_FIRST_MUKI_U 9 //Å‰‚Ì‰æ‘œ‚ÌŒü‚«(ã)
+
+#define GAME_ENE_BOSS_BUN_YOKO_CNT 4 //BOSS‚Ì•ªŠ„”
+#define GAME_ENE_BOSS_BUN_TATE_CNT 4
+
+#define GAME_ENE_BOSS_YOKO_SIZE 64 //BOSS‚Ì‘å‚«‚³
+#define GAME_ENE_BOSS_TATE_SIZE 112
+
+#define GAME_ENE_BOSS_MOTION_NUM 16 //BOSS‚Ì‰æ‘œ”
+
+#define GAME_ENE_BOSS_KIND_YOKO 4 //BOSS‚Ì‰æ‘œ”
+#define GAME_ENE_BOSS_KIND_TATE 4 //BOSS‚Ì‰æ‘œ”
+
+#define GAME_BOSS_NUM 1	//boss‚Ì”
+#define GAME_BOSS_SPEED 2 //BOSS‚ÌƒXƒs[ƒh
 
 //#######—ñ‹“Œ^#########
 
@@ -96,8 +155,18 @@ enum GAME_SCENE {
 	GAME_SCENE_PUOLOGUE,	//ƒvƒƒ[ƒO‰æ–Ê
 	GAME_SCENE_PLAY,	//ƒvƒŒƒC‰æ–Ê
 //	GAME_SCENE_GAMEOVER,	//GameOver‰æ–Ê
-	GAME_SCENE_END		//ƒGƒ“ƒh‰æ–Ê
+//    GAME_SCENE_MOVE_SCENE,	//ƒV[ƒ“‘JˆÚ‰æ–Ê
+GAME_SCENE_END		//ƒGƒ“ƒh‰æ–Ê
 };
+
+enum GAME_MAP_SCENE
+{
+	GAME_MAP_SCENE_F1, //F1
+	GAME_MAP_SCENE_F2, //F2
+	GAME_MAP_SCENE_F3, //F3
+	GAME_MAP_SCENE_F4, //F4
+	GAME_MAP_SCENE_BOSS //BOSS
+}; //ƒ}ƒbƒv‚ÌŽí—Þ
 
 enum CHARA_IMAGE {
 	CHARA_KIND_1 = 0,
@@ -106,6 +175,20 @@ enum CHARA_IMAGE {
 	CHARA_KIND_4 = 9,
 	CHARA_KIND_5 = 54
 }; //ƒLƒƒƒ‰‚ÌŽí—Þ‚Ì—ñ‹“Œ^
+
+
+
+enum MAP_IMAGE {
+	M_S = 5,   //ŠK’i
+	M_B = 15   //‹ó”’
+};
+
+enum ITEM_NAME {
+	BRANCH,  //Ž}
+	COPPER,  //“º
+	IRON,   //“S
+	GOLD    //‹à
+}; //ƒAƒCƒeƒ€‚Ì–¼‘O
 
 struct STRUCT_GAZOU {
 	int Handle;			//‰æ‘œ‚Ìƒnƒ“ƒhƒ‹
@@ -154,6 +237,12 @@ struct STRUCT_MAP
 
 	RECT rect_OK[GAME_MAP_TATE][GAME_MAP_YOKO];			//“–‚½‚è”»’è‚Ì—Ìˆæ(’Ês‚Å‚«‚é)
 	RECT rect_OK_First[GAME_MAP_TATE][GAME_MAP_YOKO];	//“–‚½‚è”»’è‚Ì—Ìˆæ(’Ês‚Å‚«‚é)(Å‰)
+
+	RECT rectMap_Item[GAME_MAP_TATE][GAME_MAP_YOKO];			//ƒAƒCƒeƒ€“–‚½‚è”»’è‚Ì—Ìˆæ(’Ês‚Å‚«‚é)
+	RECT rectMap_Item_First[GAME_MAP_TATE][GAME_MAP_YOKO];	//“–‚½‚è”»’è‚Ì—Ìˆæ(’Ês‚Å‚«‚é)(Å‰)
+
+	RECT rectMap_Kaidan[GAME_MAP_TATE][GAME_MAP_YOKO];		//ŠK’i
+	RECT rectMap_Kaidan_First[GAME_MAP_TATE][GAME_MAP_YOKO];
 
 }; //MAP\‘¢‘Ì
 
@@ -204,7 +293,10 @@ struct STRUCT_CHARADATA
 	char name[255];		//–¼‘O
 
 
+	int item[GAME_MAP_ITEM_KIND]; //Ž‚Á‚Ä‚¢‚éƒAƒCƒeƒ€‚Ì”
+
 	RECT rect_act;	//s“®‚Ì—Ìˆæ
+	RECT rect_item;  //î•ñ‚Ì—Ìˆæ[ƒAƒCƒeƒ€]
 
 	int act_kind;				//s“®‚ÌŽí—Þ
 	BOOL IsActKeyDown_left;		//s“®‚ð‰Ÿ‚µ‚½‚Æ‚«(‰E)
@@ -212,22 +304,74 @@ struct STRUCT_CHARADATA
 
 }; //STRUCT_CHARADATA\‘¢‘Ì
 
+struct STRUCT_BOSS
+{
+	STRUCT_CHARAIMAGE bossimage;	//‰æ‘œ
+	int Handle[GAME_ENE_BOSS_MOTION_NUM];//‰æ‘œ‚Ìƒnƒ“ƒhƒ‹
+	int X;							//c‚ÌˆÊ’u
+	int Y;							//‰¡‚ÌˆÊ’u
+	int Width;						//‰¡‚ÌƒTƒCƒY
+	int Height;						//c‚ÌƒTƒCƒY
+	int C_Width;					//‰¡‚Ì’†SˆÊ’u
+	int C_Height;					//c‚Ì’†SˆÊ’u
+	int NowHandleNum;				//Œ»Ý‚Ì‰æ‘œ‚Ìƒnƒ“ƒhƒ‹
+	int NowHandleCnt;				//Œ»Ý‚Ìƒnƒ“ƒhƒ‹ƒJƒEƒ“ƒg
+	int NowHandleCntMAX;			//Œ»Ý‚Ìƒnƒ“ƒhƒ‹ƒJƒEƒ“ƒgMAX
+
+	int Speed;
+
+	BOOL CanMoveLeft;					//¶‚És‚¯‚é‚©
+	BOOL CanMoveRight;					//‰E‚És‚¯‚é‚©
+
+	BOOL IsAlive;						//¶‚«‚Ä‚¢‚é‚©‚Ç‚¤‚©
+	BOOL IsView;						//•\Ž¦‚Å‚«‚é‚Æ‚«
+	int muki;							//“G‚ÌŒü‚«
+	int viewStartPointX;				//ƒvƒŒƒCƒ„[‚ª‚±‚ÌXˆÊ’u‚Ü‚Å—ˆ‚é‚Æ“G‚ª•\Ž¦‚³‚ê‚é
+	int viewStartPointY;				//ƒvƒŒƒCƒ„[‚ª‚±‚ÌYˆÊ’u‚Ü‚Å—ˆ‚é‚Æ“G‚ª•\Ž¦‚³‚ê‚é
+	int SetFirstX;						//“G‚ÌÅ‰‚ÌXˆÊ’u
+	int SetFirstY;						//“G‚ÌÅ‰‚ÌYˆÊ’u
+	int SetFirstmuki;					//“G‚ÌÅ‰‚ÌŒü‚«
+	int IsPassed;						//’Ê‰ß‚µ‚½
+
+	int atariX;							//“–‚½‚è”»’è‚ÌXˆÊ’u
+	int atariY;							//“–‚½‚è”»’è‚ÌYˆÊ’u
+	int atariWidth;						//“–‚½‚è”»’è‚Ì•
+	int atariHeight;					//“–‚½‚è”»’è‚Ì‚‚³
+	RECT atariRect;						//“–‚½‚è”»’è‚Ì‹éŒ`—Ìˆæ
+}; //BOSS\‘¢‘Ì
+
+struct STRUCT_MUSIC
+{
+	int Handle;					//‰¹‚Ìƒnƒ“ƒhƒ‹
+	char FilePath[128];			//ƒtƒ@ƒCƒ‹‚ÌƒpƒX
+	int Playtype;				//‰¹‚ÌÄ¶•û–@
+};	//‰¹\‘¢‘Ì
+
 //###### –¼‘O‚ÌÄ’è‹` ########
 typedef STRUCT_GAZOU GAZOU;
 typedef STRUCT_IMAGE IMAGE;
 typedef STRUCT_MAP MAP;
 typedef STRUCT_CHARAIMAGE CHARAIMAGE;
 typedef STRUCT_CHARADATA CHARADATA;
+typedef STRUCT_BOSS BOSS;
+typedef STRUCT_MUSIC MUSIC;
 
 GAZOU  BackGround;	//ƒ^ƒCƒgƒ‹”wŒi‰æ‘œ
 GAZOU  BackGround_T;  //ƒ^ƒCƒgƒ‹‰æ‘œ
 GAZOU  BackGround_P;	//ƒvƒƒ[ƒO
+GAZOU  Boss;			//ƒ{ƒX
 
 MAP MapImage;
-MAP MapImage_U;  //‰º’n‚Ìƒ}ƒbƒv‰æ‘œ
-MAP MapImage_W;  //•Ç‚È‚Ç‚Ìƒ}ƒbƒv‰æ‘œ
-MAP MapImage_B;  //ƒ{ƒX–Ê‚Ìƒ}ƒbƒv‰æ‘œ
-MAP MapImage_S;  //ŠK’i‚Ìƒ}ƒbƒv‰æ‘œ
+MAP MapImage_U[GAME_MAP_KIND];  //‰º’n‚Ìƒ}ƒbƒv‰æ‘œ
+MAP MapImage_W[GAME_MAP_KIND];  //•Ç‚È‚Ç‚Ìƒ}ƒbƒv‰æ‘œ
+MAP MapImage_S[GAME_MAP_KIND];  //ŠK’i‚Ìƒ}ƒbƒv‰æ‘œ
+MAP MapImage_A[GAME_MAP_KIND];  //“–‚½‚è”»’è‚Ì‰æ‘œ
+
+MAP ItemImage_1[GAME_MAP_ITEM_KIND];  //1ŠK‚ÌƒAƒCƒeƒ€‰æ‘œ
+
+MUSIC MUSIC_MY_TITLE;
+MUSIC MUSIC_MY_BGM_1;
+MUSIC MUSIC_MY_BOSS;
 
 //######### ƒOƒ[ƒoƒ‹•Ï” #######
 
@@ -246,11 +390,26 @@ char AllKeyState[256];	//‚·‚×‚Ä‚ÌƒL[‚Ìó‘Ô‚ª“ü‚é
 
 //ƒV[ƒ“ŠÖŒW
 int GameSceneNow = (int)GAME_SCENE_TITLE;	//Å‰‚ÌƒQ[ƒ€‰æ–Ê‚ðƒ^ƒCƒgƒ‹‰æ–Ê‚ÉÝ’è
+int GameMapNow = (int)GAME_MAP_SCENE_F1;
+
+int MapNowPos = 0;  //Œ»Ý‚Ìƒ}ƒbƒv
+MAP MapDataKind[5];
 
 //ƒLƒƒƒ‰Œn
 CHARAIMAGE CharaImage;		//ƒLƒƒƒ‰‚Ì‰æ‘œ
 CHARADATA  Myplayer;		//ƒLƒƒƒ‰‚Ìƒf[ƒ^
 
+CHARAIMAGE bossimage;             //ƒ{ƒX‚Ì‰æ‘œ
+BOSS  oni;
+BOSS boss[GAME_BOSS_NUM];   //ƒ{ƒX
+//ƒAƒCƒeƒ€Œn
+int MapKaidanKind[GAME_MAP_KAIDAN] = { 5 };	//ŠK’i‚Ì”Ô†
+
+
+int MapItemKind[GAME_MAP_ITEM_KIND] = { 0,1,2,3 };	//ƒAƒCƒeƒ€‚Ì”Ô†
+char ItemName[GAME_MAP_ITEM_KIND][128] = { "–Ø‚ÌŽ}","“º","“S","‹à" };	//ƒAƒCƒeƒ€–¼
+
+bool itemdrowflag = false;
 
 //ƒvƒŒƒCƒ„[‚ÌƒCƒ[ƒW‰æ‘œ‚Ì”Ô†‚ðÝ’è‚·‚é
 int PlayerImageNum[GAME_CHARA_MOTION_NUM];
@@ -282,23 +441,26 @@ VOID MY_GAME_PROLOGUE(VOID);	//ƒvƒƒ[ƒO‰æ–Ê
 VOID MY_GAME_PLAY(VOID);		//ƒvƒŒƒC‰æ–Ê
 VOID MY_GAME_END(VOID);			//ƒGƒ“ƒh‰æ–Ê
 
+VOID MY_PLAY_BACKIMAGE_DRAW(VOID);	//”wŒi‰æ‘œ‚ð•`‰æ‚·‚éŠÖ”
+
 VOID MY_PLAY_MAP_DRAW(MAP);			//ƒ}ƒbƒv‚ð•\Ž¦‚·‚éŠÖ”
-VOID MY_PLAY_MAP_DRAW_ATARI(MAP *, MAP *, MAP *);		//ƒ}ƒbƒv‚Ì“–‚½‚è”»’è‚ð•`‰æ‚·‚éŠÖ”
+VOID MY_PLAY_MAP_DRAW_ATARI(MAP *);		//ƒ}ƒbƒv‚Ì“–‚½‚è”»’è‚ð•`‰æ‚·‚éŠÖ”
 BOOL MY_GAZOU_LOAD(GAZOU *, int, int, const char *);			//‰æ‘œ‚ð“Ç‚Ýž‚ÞÝ’è‚ð‚·‚éŠÖ”
 
 BOOL MY_PLAY_INIT(VOID);	//‰Šú‰»ŠÖ”
+VOID MY_PG_INIT(VOID);	//ƒvƒƒ[ƒO‰æ‘œˆÊ’u‰Šú‰»
 
-BOOL MY_MAP_READ_CSV_UE_KIND_SET(MAP *);	//ƒ}ƒbƒv”»’è‚ÌŽí—Þ‚ðÝ’è‚·‚é(ã)
-BOOL MY_MAP_READ_CSV_NAKA_KIND_SET(MAP *);	//ƒ}ƒbƒv”»’è‚ÌŽí—Þ‚ðÝ’è‚·‚é(’†)
-BOOL MY_MAP_READ_CSV_SITA_KIND_SET(MAP *);	//ƒ}ƒbƒv”»’è‚ÌŽí—Þ‚ðÝ’è‚·‚é(‰º)
-BOOL MY_MAP_READ_CSV_NUM(MAP * ,const char *, const char *);			//ƒQ[ƒ€ƒ}ƒbƒv‚ÌF1CSV‚ð“Ç‚Ýž‚ÞŠÖ”
+BOOL MY_MAP_READ_CSV_KIND_SET(MAP *); //ƒ}ƒbƒv”»’è‚ÌŽí—Þ‚ðÝ’è‚·‚é
+
+BOOL MY_MAP_READ_CSV_NUM(MAP *, const char *, const char *);			//ƒQ[ƒ€ƒ}ƒbƒv‚ÌF1CSV‚ð“Ç‚Ýž‚ÞŠÖ”
 
 BOOL MY_MAP_LOAD_BUNKATSU(MAP *, int, int, int, int, int, const char *);	//MAP‚ð•ªŠ„‚µ‚Ä“Ç‚Ýž‚ÞÝ’è‚ð‚·‚éŠÖ”
 BOOL MY_MAP_2_LOAD_BUNKATSU(MAP *, int, int, int, int, int, const char *);	//MAP‚ð•ªŠ„‚µ‚Ä“Ç‚Ýž‚ÞÝ’è‚ð‚·‚éŠÖ”
 BOOL MY_MAP_3_LOAD_BUNKATSU(MAP *, int, int, int, int, int, const char *);	//MAP‚ð•ªŠ„‚µ‚Ä“Ç‚Ýž‚ÞÝ’è‚ð‚·‚éŠÖ”
 BOOL MY_MAP_4_LOAD_BUNKATSU(MAP *, int, int, int, int, int, const char *);	//MAP‚ð•ªŠ„‚µ‚Ä“Ç‚Ýž‚ÞÝ’è‚ð‚·‚éŠÖ”
 
-BOOL MY_CHARA_LOAD_BUNKATSU(CHARAIMAGE *,int,int,int,int,int, const char *);
+
+BOOL MY_CHARA_LOAD_BUNKATSU(CHARAIMAGE *, int, int, int, int, int, const char *);
 
 BOOL MY_PLAYER_INIT(CHARADATA *, CHARAIMAGE, int *, int, int, int);	//ƒvƒŒƒCƒ„[‚ð‰Šú‰»‚·‚éŠÖ”
 VOID MY_PLAY_PLAYER_DRAW(CHARADATA);	//ƒvƒŒƒCƒ„[‚ð•\Ž¦‚·‚éŠÖ”
@@ -308,12 +470,30 @@ BOOL MY_PLAY_PLAYER_OPERATION_KEY(int *, int *);			//ƒvƒŒƒCƒ„[‚ðƒL[‘€ì‚·‚éŠÖ
 
 VOID MY_SET_PLAYER_ATARI(CHARADATA *);			//ƒvƒŒƒCƒ„[‚Ì“–‚½‚è”»’è‚Ì—Ìˆæ‚ðÝ’è‚·‚éŠÖ”
 
+VOID MY_PLAY_ENEMY_DRAW_DETAIL(BOSS *);		//“G‚ð•\Ž¦‚·‚é(Ú×)ŠÖ”
+VOID MY_PLAY_ENEMY_DRAW(BOSS);						//“G‚ð•\Ž¦‚·‚éŠÖ”
+
+VOID MY_PLAY_ENEMY_OPERATION_DETAIL(BOSS *);	//“G‚ð‘€ì‚·‚é(Ú×)ŠÖ”
+VOID MY_PLAY_ENEMY_OPERATION(VOID);					//“G‚ð‘€ì‚·‚éŠÖ”
+
+VOID MY_SET_ENEMY_ATARI(BOSS *);			//“G‚Ì“–‚½‚è”»’è‚Ì—Ìˆæ‚ðÝ’è‚·‚éŠÖ”
+
+VOID MY_PLAY_ENEMY_MAP_COLLISION(BOSS *);  //“G‚Æƒ}ƒbƒv‚Æ‚ÌÚGŠÖ”
+
+BOOL MY_INIT_ENEMY(BOSS *, CHARAIMAGE, int *, int, int, int, int, int, int, int, BOOL);	//“G‚ð‰Šú‰»‚·‚éŠÖ”
+
 BOOL MY_CHECK_RECT_ATARI(RECT, RECT);		//—Ìˆæ‚Ì“–‚½‚è”»’è‚ð‚·‚éŠÖ”
 BOOL MY_CHECK_RECT_ATARI_CHARA_MAP_ATARIBASHO(RECT, RECT map[GAME_MAP_TATE][GAME_MAP_YOKO], int *, int *);
 
 int MapData[GAME_MAP_TATE][GAME_MAP_YOKO];  //ƒ}ƒbƒv‚Ìƒf[ƒ^fp
 FILE *fp_map_csv;  //ƒtƒ@ƒCƒ‹‚ÌŠÇ—”Ô†(ƒ|ƒCƒ“ƒ^)
 int MapData_Init[GAME_MAP_TATE][GAME_MAP_YOKO]; //ƒ}ƒbƒv‚Ìƒf[ƒ^(‰Šú‰»—p)
+
+VOID MY_PLAY_PLAYER_GETITEM(VOID);  //ƒAƒCƒeƒ€‚ðŽæ“¾‚·‚éŠÖ”
+
+VOID MY_MAP_SCENE_MOVE(VOID);	//ŠK’i‚ÉG‚ê‚é‚Æƒ}ƒbƒv‚ðˆÚ“®‚³‚¹‚éŠÖ”
+
+BOOL MY_MUSIC_LOAD(MUSIC *, const char *);
 
 //############ ƒvƒƒOƒ‰ƒ€‚ÅÅ‰‚ÉŽÀs‚³‚ê‚éŠÖ” ###########
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -332,9 +512,32 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	SetDrawScreen(DX_SCREEN_BACK);		//DrowŒnŠÖ”‚Í— ‰æ–Ê‚É•\Ž¦
 
-	MY_MAP_READ_CSV_UE_KIND_SET(&MapImage_S);	//ƒ}ƒbƒv‚Ìã‚ÌŽí—Þ‚ðÝ’è
-	MY_MAP_READ_CSV_NAKA_KIND_SET(&MapImage_W);	//ƒ}ƒbƒv‚Ì’†‚ÌŽí—Þ‚ðÝ’è
-	MY_MAP_READ_CSV_SITA_KIND_SET(&MapImage_U);	//ƒ}ƒbƒv‚Ì‰º‚ÌŽí—Þ‚ðÝ’è
+	//MY_MAP_READ_CSV_UE_KIND_SET(&MapImage_S);	//ƒ}ƒbƒv‚Ìã‚ÌŽí—Þ‚ðÝ’è
+	//MY_MAP_READ_CSV_NAKA_KIND_SET(&MapImage_W);	//ƒ}ƒbƒv‚Ì’†‚ÌŽí—Þ‚ðÝ’è
+	//MY_MAP_READ_CSV_SITA_KIND_SET(&MapImage_U);	//ƒ}ƒbƒv‚Ì‰º‚ÌŽí—Þ‚ðÝ’è
+	MY_MAP_READ_CSV_KIND_SET(MapImage_A);
+
+	MY_MAP_READ_CSV_NUM(&MapImage_W[GAME_MAP_SCENE_F1], GAME_MAP_CSV_1, GAME_MAP_F1);		    //ƒ}ƒbƒv‚P‚Ìã‚ð“Ç‚Ýž‚ÝA“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‚Â‚­‚é
+	MY_MAP_READ_CSV_NUM(&MapImage_U[GAME_MAP_SCENE_F1], GAME_MAP_CSV_6, GAME_MAP_NAME_SITA);	   //ƒ}ƒbƒv‚P‚Ì‰º‚ð“Ç‚Ýž‚ÝA“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‚Â‚­‚é
+	MY_MAP_READ_CSV_NUM(&MapImage_S[GAME_MAP_SCENE_F1], GAME_MAP_CSV_1_K, GAME_MAP_F1_K);		//ƒ}ƒbƒv‚P‚ÌŠK’i‚ð“Ç‚Ýž‚ÝA“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‚Â‚­‚é
+	MY_MAP_READ_CSV_NUM(&MapImage_A[GAME_MAP_SCENE_F1], GAME_MAP_CSV_1_A, GAME_MAP_F1);        //ƒ}ƒbƒv‚P‚Ìatari‚ð“Ç‚Ýž‚ÝA“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‚Â‚­‚é
+
+	MY_MAP_READ_CSV_NUM(&MapImage_W[GAME_MAP_SCENE_F2], GAME_MAP_CSV_2, GAME_MAP_F2);		    //ƒ}ƒbƒv2‚Ìã‚ð“Ç‚Ýž‚ÝA“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‚Â‚­‚é
+	MY_MAP_READ_CSV_NUM(&MapImage_S[GAME_MAP_SCENE_F2], GAME_MAP_CSV_2_K, GAME_MAP_F2_K);		//ƒ}ƒbƒv2‚ÌŠK’i‚ð“Ç‚Ýž‚ÝA“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‚Â‚­‚é
+	MY_MAP_READ_CSV_NUM(&MapImage_A[GAME_MAP_SCENE_F2], GAME_MAP_CSV_2_A, GAME_MAP_F2);        //ƒ}ƒbƒv2‚Ìatari‚ð“Ç‚Ýž‚ÝA“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‚Â‚­‚é
+
+	MY_MAP_READ_CSV_NUM(&MapImage_W[GAME_MAP_SCENE_F3], GAME_MAP_CSV_3, GAME_MAP_F3);		    //ƒ}ƒbƒv2‚Ìã‚ð“Ç‚Ýž‚ÝA“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‚Â‚­‚é
+	MY_MAP_READ_CSV_NUM(&MapImage_S[GAME_MAP_SCENE_F3], GAME_MAP_CSV_3_K, GAME_MAP_F3_K);		//ƒ}ƒbƒv2‚ÌŠK’i‚ð“Ç‚Ýž‚ÝA“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‚Â‚­‚é
+	MY_MAP_READ_CSV_NUM(&MapImage_A[GAME_MAP_SCENE_F3], GAME_MAP_CSV_3_A, GAME_MAP_F3);        //ƒ}ƒbƒv2‚Ìatari‚ð“Ç‚Ýž‚ÝA“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‚Â‚­‚é
+
+	MY_MAP_READ_CSV_NUM(&MapImage_W[GAME_MAP_SCENE_F4], GAME_MAP_CSV_4, GAME_MAP_F4);		    //ƒ}ƒbƒv2‚Ìã‚ð“Ç‚Ýž‚ÝA“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‚Â‚­‚é
+	MY_MAP_READ_CSV_NUM(&MapImage_S[GAME_MAP_SCENE_F4], GAME_MAP_CSV_4_K, GAME_MAP_F4_K);		//ƒ}ƒbƒv2‚ÌŠK’i‚ð“Ç‚Ýž‚ÝA“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‚Â‚­‚é
+	MY_MAP_READ_CSV_NUM(&MapImage_A[GAME_MAP_SCENE_F4], GAME_MAP_CSV_4_A, GAME_MAP_F4);        //ƒ}ƒbƒv2‚Ìatari‚ð“Ç‚Ýž‚ÝA“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‚Â‚­‚é
+
+	MY_MAP_READ_CSV_NUM(&MapImage_W[GAME_MAP_SCENE_BOSS], GAME_MAP_CSV_5, GAME_MAP_BOSS);        //BossMap‚Ìã‚ð“Ç‚Ýž‚Ý,“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‚Â‚­‚é
+	MY_MAP_READ_CSV_NUM(&MapImage_A[GAME_MAP_SCENE_BOSS], GAME_MAP_CSV_BOSS, GAME_MAP_BOSS);     //BOSSmap‚Ì“–‚½‚è”»’è‚ð“Ç‚Ýž‚ÝA“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‚Â‚­‚é
+
+	MY_MAP_READ_CSV_NUM(&ItemImage_1[GAME_MAP_SCENE_F1], GAME_ITEMIMAGE_CSV_1, GAME_MAP_F1_ITEM);		    //ƒ}ƒbƒv‚P‚ÌƒAƒCƒeƒ€‚ð“Ç‚Ýž‚ÝA“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‚Â‚­‚é
 
 	if (MY_GAZOU_LOAD(&BackGround, 0, 0, GAME_TITLE_BACKIMAGE) == FALSE) {  //ƒ^ƒCƒgƒ‹”wŒi‰æ‘œ‚ð“Ç‚Ýž‚Þ
 		MessageBox(NULL, GAME_TITLE_BACKIMAGE, "NotFound", MB_OK);
@@ -342,7 +545,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	}
 
 
-	if (MY_GAZOU_LOAD(&BackGround_T,150,200, GAME_TITLEIMAGE) == FALSE) {  //ƒ^ƒCƒgƒ‹‰æ‘œ‚ð“Ç‚Ýž‚Þ
+	if (MY_GAZOU_LOAD(&BackGround_T, 150, 200, GAME_TITLEIMAGE) == FALSE) {  //ƒ^ƒCƒgƒ‹‰æ‘œ‚ð“Ç‚Ýž‚Þ
 		MessageBox(NULL, GAME_TITLEIMAGE, "NotFound", MB_OK);
 		return -1;
 	}
@@ -352,34 +555,79 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		return -1;
 	}
 
-	if (MY_MAP_LOAD_BUNKATSU(&MapImage_U, GAME_MAP_1_YOKO_MAX * GAME_MAP_1_TATE_MAX, GAME_MAP_1_YOKO_MAX, GAME_MAP_1_TATE_MAX,  GAME_MAP_YOKO_SIZE, GAME_MAP_TATE_SIZE, GAME_MAP_1) == FALSE) {  //‰º’n‚Ìƒ}ƒbƒvƒ`ƒbƒv‰æ‘œ‚ð“Ç‚Ýž‚Þ
+	if (MY_GAZOU_LOAD(&Boss, 0, 0, GAME_ENE_BOSS_IMAGE) == FALSE) {  //BOSS‚ð“Ç‚Ýž‚Þ
+		MessageBox(NULL, GAME_ENE_BOSS_IMAGE, "NotFound", MB_OK);
+		return -1;
+	}
+
+
+	if (MY_MAP_LOAD_BUNKATSU(&MapImage_U[GAME_MAP_SCENE_F1], GAME_MAP_1_YOKO_MAX * GAME_MAP_1_TATE_MAX, GAME_MAP_1_YOKO_MAX, GAME_MAP_1_TATE_MAX, GAME_MAP_YOKO_SIZE, GAME_MAP_TATE_SIZE, GAME_MAP_1) == FALSE) {  //‰º’n‚Ìƒ}ƒbƒvƒ`ƒbƒv‰æ‘œ‚ð“Ç‚Ýž‚Þ
 		MessageBox(NULL, GAME_MAP_1, "NotFound", MB_OK);
 		return -1;
 	}
 
-	if (MY_MAP_2_LOAD_BUNKATSU(&MapImage_W, GAME_MAP_2_YOKO_MAX * GAME_MAP_2_TATE_MAX, GAME_MAP_2_YOKO_MAX, GAME_MAP_2_TATE_MAX, GAME_MAP_YOKO_SIZE, GAME_MAP_TATE_SIZE, GAME_MAP_2) == FALSE) {  //•ÇŒn‚Ìƒ}ƒbƒvƒ`ƒbƒv‰æ‘œ‚ð“Ç‚Ýž‚Þ
+
+	if (MY_MAP_2_LOAD_BUNKATSU(&MapImage_W[GAME_MAP_SCENE_F1], GAME_MAP_2_YOKO_MAX * GAME_MAP_2_TATE_MAX, GAME_MAP_2_YOKO_MAX, GAME_MAP_2_TATE_MAX, GAME_MAP_YOKO_SIZE, GAME_MAP_TATE_SIZE, GAME_MAP_2) == FALSE) {  //•ÇŒn‚Ìƒ}ƒbƒvƒ`ƒbƒv‰æ‘œ‚ð“Ç‚Ýž‚Þ
 		MessageBox(NULL, GAME_MAP_2, "NotFound", MB_OK);
 		return -1;
 	}
 
-	if (MY_MAP_3_LOAD_BUNKATSU(&MapImage_B, GAME_MAP_3_YOKO_MAX*GAME_MAP_3_TATE_MAX, GAME_MAP_3_YOKO_MAX, GAME_MAP_3_TATE_MAX, GAME_MAP_YOKO_SIZE, GAME_MAP_TATE_SIZE, GAME_MAP_3) == FALSE) {  //ƒ{ƒXƒGƒŠƒA‚Ìƒ}ƒbƒvƒ`ƒbƒv‚ð“Ç‚Ýž‚Þ
-		MessageBox(NULL, GAME_MAP_3, "NotFound", MB_OK);
+	if (MY_MAP_2_LOAD_BUNKATSU(&MapImage_W[GAME_MAP_SCENE_F2], GAME_MAP_2_YOKO_MAX * GAME_MAP_2_TATE_MAX, GAME_MAP_2_YOKO_MAX, GAME_MAP_2_TATE_MAX, GAME_MAP_YOKO_SIZE, GAME_MAP_TATE_SIZE, GAME_MAP_2) == FALSE) {  //•ÇŒn‚Ìƒ}ƒbƒvƒ`ƒbƒv‰æ‘œ‚ð“Ç‚Ýž‚Þ
+		MessageBox(NULL, GAME_MAP_2, "NotFound", MB_OK);
 		return -1;
 	}
 
-	if (MY_MAP_4_LOAD_BUNKATSU(&MapImage_S, GAME_MAP_4_YOKO_MAX*GAME_MAP_4_TATE_MAX, GAME_MAP_4_YOKO_MAX, GAME_MAP_4_TATE_MAX, GAME_MAP_YOKO_SIZE, GAME_MAP_TATE_SIZE, GAME_MAP_4) == FALSE) {  //ŠK’i‚Ìƒ}ƒbƒvƒ`ƒbƒv‚ð“Ç‚Ýž‚Þ
+	if (MY_MAP_2_LOAD_BUNKATSU(&MapImage_W[GAME_MAP_SCENE_F3], GAME_MAP_2_YOKO_MAX * GAME_MAP_2_TATE_MAX, GAME_MAP_2_YOKO_MAX, GAME_MAP_2_TATE_MAX, GAME_MAP_YOKO_SIZE, GAME_MAP_TATE_SIZE, GAME_MAP_2) == FALSE) {  //•ÇŒn‚Ìƒ}ƒbƒvƒ`ƒbƒv‰æ‘œ‚ð“Ç‚Ýž‚Þ
+		MessageBox(NULL, GAME_MAP_2, "NotFound", MB_OK);
+		return -1;
+	}
+
+	if (MY_MAP_2_LOAD_BUNKATSU(&MapImage_W[GAME_MAP_SCENE_F4], GAME_MAP_2_YOKO_MAX * GAME_MAP_2_TATE_MAX, GAME_MAP_2_YOKO_MAX, GAME_MAP_2_TATE_MAX, GAME_MAP_YOKO_SIZE, GAME_MAP_TATE_SIZE, GAME_MAP_2) == FALSE) {  //•ÇŒn‚Ìƒ}ƒbƒvƒ`ƒbƒv‰æ‘œ‚ð“Ç‚Ýž‚Þ
+		MessageBox(NULL, GAME_MAP_2, "NotFound", MB_OK);
+		return -1;
+	}
+
+	if (MY_MAP_2_LOAD_BUNKATSU(&MapImage_W[GAME_MAP_SCENE_BOSS], GAME_MAP_2_YOKO_MAX*GAME_MAP_2_TATE_MAX, GAME_MAP_2_YOKO_MAX, GAME_MAP_2_TATE_MAX, GAME_MAP_YOKO_SIZE, GAME_MAP_TATE_SIZE, GAME_MAP_2) == FALSE) {  //ƒ{ƒXƒGƒŠƒA‚Ìƒ}ƒbƒvƒ`ƒbƒv‚ð“Ç‚Ýž‚Þ
+		MessageBox(NULL, GAME_MAP_2, "NotFound", MB_OK);
+		return -1;
+	}
+
+	if (MY_MAP_4_LOAD_BUNKATSU(&MapImage_S[GAME_MAP_SCENE_F1], GAME_MAP_4_YOKO_MAX*GAME_MAP_4_TATE_MAX, GAME_MAP_4_YOKO_MAX, GAME_MAP_4_TATE_MAX, GAME_MAP_YOKO_SIZE, GAME_MAP_TATE_SIZE, GAME_MAP_4) == FALSE) {  //ŠK’i‚Ìƒ}ƒbƒvƒ`ƒbƒv‚ð“Ç‚Ýž‚Þ
 		MessageBox(NULL, GAME_MAP_4, "NotFound", MB_OK);
 		return -1;
 	}
 
-	if (MY_CHARA_LOAD_BUNKATSU(&CharaImage, GAME_CHARA_BUN_YOKO_CNT*GAME_CHARA_BUN_TATE_CNT, GAME_CHARA_BUN_YOKO_CNT, GAME_CHARA_BUN_TATE_CNT, GAME_CHARA_YOKO_SIZE, GAME_CHARA_TATE_SIZE, GAME_CHARA) == FALSE) {
+	if (MY_MAP_4_LOAD_BUNKATSU(&MapImage_S[GAME_MAP_SCENE_F2], GAME_MAP_4_YOKO_MAX*GAME_MAP_4_TATE_MAX, GAME_MAP_4_YOKO_MAX, GAME_MAP_4_TATE_MAX, GAME_MAP_YOKO_SIZE, GAME_MAP_TATE_SIZE, GAME_MAP_4) == FALSE) {  //ŠK’i‚Ìƒ}ƒbƒvƒ`ƒbƒv‚ð“Ç‚Ýž‚Þ
+		MessageBox(NULL, GAME_MAP_4, "NotFound", MB_OK);
+		return -1;
+	}
+
+	if (MY_MAP_4_LOAD_BUNKATSU(&MapImage_S[GAME_MAP_SCENE_F3], GAME_MAP_4_YOKO_MAX*GAME_MAP_4_TATE_MAX, GAME_MAP_4_YOKO_MAX, GAME_MAP_4_TATE_MAX, GAME_MAP_YOKO_SIZE, GAME_MAP_TATE_SIZE, GAME_MAP_4) == FALSE) {  //ŠK’i‚Ìƒ}ƒbƒvƒ`ƒbƒv‚ð“Ç‚Ýž‚Þ
+		MessageBox(NULL, GAME_MAP_4, "NotFound", MB_OK);
+		return -1;
+	}
+
+	if (MY_MAP_4_LOAD_BUNKATSU(&MapImage_S[GAME_MAP_SCENE_F4], GAME_MAP_4_YOKO_MAX*GAME_MAP_4_TATE_MAX, GAME_MAP_4_YOKO_MAX, GAME_MAP_4_TATE_MAX, GAME_MAP_YOKO_SIZE, GAME_MAP_TATE_SIZE, GAME_MAP_4) == FALSE) {  //ŠK’i‚Ìƒ}ƒbƒvƒ`ƒbƒv‚ð“Ç‚Ýž‚Þ
+		MessageBox(NULL, GAME_MAP_4, "NotFound", MB_OK);
+		return -1;
+	}
+
+
+	if (MY_CHARA_LOAD_BUNKATSU(&CharaImage, GAME_CHARA_BUN_YOKO_CNT*GAME_CHARA_BUN_TATE_CNT, GAME_CHARA_BUN_YOKO_CNT, GAME_CHARA_BUN_TATE_CNT, GAME_CHARA_YOKO_SIZE, GAME_CHARA_TATE_SIZE, GAME_CHARA) == FALSE) {   //GAME_CHARA‚ð“Ç‚Ýž‚Þ
 		MessageBox(NULL, GAME_CHARA, "NotFound", MB_OK);
 		return -1;
-	}		//GAME_CHARA‚ð“Ç‚Ýž‚Þ
+	}
 
-	MY_MAP_READ_CSV_NUM(&MapImage_W, GAME_MAP_CSV_1, GAME_MAP_F1);		    //ƒ}ƒbƒv‚P‚Ìã‚ð“Ç‚Ýž‚ÝA“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‚Â‚­‚é
-	MY_MAP_READ_CSV_NUM(&MapImage_S, GAME_MAP_CSV_1_K, GAME_MAP_F1_K);		//ƒ}ƒbƒv‚P‚ÌŠK’i‚ð“Ç‚Ýž‚ÝA“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‚Â‚­‚é
-	MY_MAP_READ_CSV_NUM(&MapImage_U, GAME_MAP_CSV_6, GAME_MAP_NAME_SITA);	//ƒ}ƒbƒv‚P‚Ì‰º‚ð“Ç‚Ýž‚ÝA“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‚Â‚­‚é
+	if (MY_MAP_LOAD_BUNKATSU(&ItemImage_1[GAME_MAP_SCENE_F1], GAME_ITEM_BUN_YOKO_CNT * GAME_ITEM_BUN_TATE_CNT, GAME_ITEM_BUN_YOKO_CNT, GAME_ITEM_BUN_TATE_CNT, GAME_ITEM_YOKO_SIZE, GAME_ITEM_TATE_SIZE, ITEM) == FALSE) {  //ƒAƒCƒeƒ€‚Ìƒ}ƒbƒvƒ`ƒbƒv‰æ‘œ‚ð“Ç‚Ýž‚Þ
+		MessageBox(NULL, ITEM, "NotFound", MB_OK);
+		return -1;
+	}
+
+	//‰¹‚ð“Ç‚Ýž‚Þ
+	MY_MUSIC_LOAD(&MUSIC_MY_TITLE, GAME_MUSIC_OP);
+	MY_MUSIC_LOAD(&MUSIC_MY_BGM_1, GAME_MUSIC_MAP_BGM);
+	MY_MUSIC_LOAD(&MUSIC_MY_BOSS, GAME_MUSIC_BOSS);
+
 
 	IsActiveCheck = TRUE;
 
@@ -394,7 +642,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			break;
 		}
 
-        MY_ALL_KEYDOWN_UPDATE();		//ƒL[‚Ìó‘Ô‚ðŽæ“¾
+		MY_ALL_KEYDOWN_UPDATE();		//ƒL[‚Ìó‘Ô‚ðŽæ“¾
+
+		/*if (GameSceneNow != (int)GAME_SCENE_MOVE_SCENE)
+		{
+			SceneBefore = GameSceneNow;
+		}*/
 
 		switch (GameSceneNow)	//ƒV[ƒ“‘I‘ð
 		{
@@ -403,7 +656,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			MY_GAME_TITLE();	//ƒ^ƒCƒgƒ‹‰æ–Ê‚Ìˆ—
 
 			break;	//ƒ^ƒCƒgƒ‹‰æ–Ê‚Ìˆ—‚±‚±‚Ü‚Å
-		
+
 
 		case(int)GAME_SCENE_PUOLOGUE:	//ƒvƒƒ[ƒO‰æ–Ê‚Ìˆ—‚±‚±‚©‚ç
 
@@ -428,7 +681,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			break;
 		}
 		MY_FPS_UPDATE();		//FPS‚Ìˆ—(XV)
-		
+
 		MY_FPS_DRAW();			//FPS‚Ìˆ—(•`‰æ)
 
 		ScreenFlip();			//ƒ‚ƒjƒ^‚ÌƒŠƒtƒŒƒbƒVƒ…ƒŒ[ƒg‚Ì‘¬‚³‚Å— ‰æ–Ê‚ðÄ•`‰æ
@@ -445,23 +698,62 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	for (int mapCnt = 0; mapCnt < GAME_MAP_1_YOKO_MAX * GAME_MAP_1_TATE_MAX; mapCnt++)
 	{
-		DeleteGraph(MapImage_U.Handle[mapCnt]);	//ƒ}ƒbƒv1‚Ìƒnƒ“ƒhƒ‹‚ðíœ
+		DeleteGraph(MapImage_U[GAME_MAP_SCENE_F1].Handle[mapCnt]);	//ƒ}ƒbƒv1‚Ìƒnƒ“ƒhƒ‹‚ðíœ
 	}
 
 	for (int mapCnt = 0; mapCnt < GAME_MAP_2_YOKO_MAX * GAME_MAP_2_TATE_MAX; mapCnt++)
 	{
-		DeleteGraph(MapImage_W.Handle[mapCnt]);	//ƒ}ƒbƒv2‚Ìƒnƒ“ƒhƒ‹‚ðíœ
+		DeleteGraph(MapImage_W[GAME_MAP_SCENE_F1].Handle[mapCnt]);	//ƒ}ƒbƒv2‚Ìƒnƒ“ƒhƒ‹‚ðíœ
 	}
 
-	for (int mapCnt = 0; mapCnt < GAME_MAP_3_YOKO_MAX * GAME_MAP_3_TATE_MAX; mapCnt++)
+	for (int mapCnt = 0; mapCnt < GAME_MAP_2_YOKO_MAX * GAME_MAP_2_TATE_MAX; mapCnt++)
 	{
-		DeleteGraph(MapImage_B.Handle[mapCnt]);	//ƒ}ƒbƒv3‚Ìƒnƒ“ƒhƒ‹‚ðíœ
+		DeleteGraph(MapImage_W[GAME_MAP_SCENE_F2].Handle[mapCnt]);	//ƒ}ƒbƒv2‚Ìƒnƒ“ƒhƒ‹‚ðíœ
+	}
+
+	for (int mapCnt = 0; mapCnt < GAME_MAP_2_YOKO_MAX * GAME_MAP_2_TATE_MAX; mapCnt++)
+	{
+		DeleteGraph(MapImage_W[GAME_MAP_SCENE_F3].Handle[mapCnt]);	//ƒ}ƒbƒv2‚Ìƒnƒ“ƒhƒ‹‚ðíœ
+	}
+
+	for (int mapCnt = 0; mapCnt < GAME_MAP_2_YOKO_MAX * GAME_MAP_2_TATE_MAX; mapCnt++)
+	{
+		DeleteGraph(MapImage_W[GAME_MAP_SCENE_F4].Handle[mapCnt]);	//ƒ}ƒbƒv2‚Ìƒnƒ“ƒhƒ‹‚ðíœ
+	}
+
+	for (int mapCnt = 0; mapCnt < GAME_MAP_2_YOKO_MAX * GAME_MAP_2_TATE_MAX; mapCnt++)
+	{
+		DeleteGraph(MapImage_W[GAME_MAP_SCENE_BOSS].Handle[mapCnt]);	//ƒ}ƒbƒv2‚Ìƒnƒ“ƒhƒ‹‚ðíœ
 	}
 
 	for (int mapCnt = 0; mapCnt < GAME_MAP_4_YOKO_MAX * GAME_MAP_4_TATE_MAX; mapCnt++)
 	{
-		DeleteGraph(MapImage_S.Handle[mapCnt]);	//ƒ}ƒbƒv4‚Ìƒnƒ“ƒhƒ‹‚ðíœ
+		DeleteGraph(MapImage_S[GAME_MAP_SCENE_F1].Handle[mapCnt]);	//ƒ}ƒbƒv4‚Ìƒnƒ“ƒhƒ‹‚ðíœ
 	}
+
+	for (int mapCnt = 0; mapCnt < GAME_MAP_4_YOKO_MAX * GAME_MAP_4_TATE_MAX; mapCnt++)
+	{
+		DeleteGraph(MapImage_S[GAME_MAP_SCENE_F2].Handle[mapCnt]);	//ƒ}ƒbƒv4‚Ìƒnƒ“ƒhƒ‹‚ðíœ
+	}
+
+	for (int mapCnt = 0; mapCnt < GAME_MAP_4_YOKO_MAX * GAME_MAP_4_TATE_MAX; mapCnt++)
+	{
+		DeleteGraph(MapImage_S[GAME_MAP_SCENE_F3].Handle[mapCnt]);	//ƒ}ƒbƒv4‚Ìƒnƒ“ƒhƒ‹‚ðíœ
+	}
+
+	for (int mapCnt = 0; mapCnt < GAME_MAP_4_YOKO_MAX * GAME_MAP_4_TATE_MAX; mapCnt++)
+	{
+		DeleteGraph(MapImage_S[GAME_MAP_SCENE_F4].Handle[mapCnt]);	//ƒ}ƒbƒv4‚Ìƒnƒ“ƒhƒ‹‚ðíœ
+	}
+
+	for (int mapCnt = 0; mapCnt < GAME_ITEM_BUN_YOKO_CNT * GAME_ITEM_BUN_TATE_CNT; mapCnt++)
+	{
+		DeleteGraph(ItemImage_1[GAME_MAP_SCENE_F1].Handle[mapCnt]);	//	ƒAƒCƒeƒ€‚Ìƒnƒ“ƒhƒ‹‚ðíœ
+	}
+
+	DeleteMusicMem(MUSIC_MY_TITLE.Handle);	    //‰¹‚Ìƒnƒ“ƒhƒ‹‚ðíœ
+	DeleteMusicMem(MUSIC_MY_BGM_1.Handle);	    //‰¹‚Ìƒnƒ“ƒhƒ‹‚ðíœ
+	DeleteMusicMem(MUSIC_MY_BOSS.Handle);		//‰¹‚Ìƒnƒ“ƒhƒ‹‚ðíœ
 
 	DxLib_End();	//DXƒ‰ƒCƒuƒ‰ƒŠŽg—p‚ÌI—¹ˆ—
 
@@ -534,6 +826,14 @@ VOID MY_ALL_KEYDOWN_UPDATE(VOID)
 //######## ƒ^ƒCƒgƒ‹‰æ–Ê‚ÌŠÖ” #############
 VOID MY_GAME_TITLE(VOID)
 {
+
+	//BGM‚ª—¬‚ê‚Ä‚¢‚È‚¢‚Æ‚«
+	if (CheckSoundMem(MUSIC_MY_TITLE.Handle) == 0)
+	{
+		ChangeVolumeSoundMem(255 * 50 / 100, MUSIC_MY_TITLE.Handle);	//BGM‚Ì‰¹—Ê‚ð50“‚É‚·‚é
+		PlaySoundMem(MUSIC_MY_TITLE.Handle, DX_PLAYTYPE_LOOP);			//BGM‚ð—¬‚·
+	}
+
 	if (AllKeyState[KEY_INPUT_RETURN] != 0)
 	{
 		if (MY_PLAY_INIT() == TRUE)
@@ -543,7 +843,7 @@ VOID MY_GAME_TITLE(VOID)
 	}
 
 
-	DrawGraph( BackGround.X, BackGround.Y, BackGround.Handle, TRUE);		//ƒ^ƒCƒgƒ‹”wŒi‰æ‘œ•`‰æ
+	DrawGraph(BackGround.X, BackGround.Y, BackGround.Handle, TRUE);		//ƒ^ƒCƒgƒ‹”wŒi‰æ‘œ•`‰æ
 
 	DrawGraph(BackGround_T.X, BackGround_T.Y, BackGround_T.Handle, TRUE);		//ƒ^ƒCƒgƒ‹‰æ‘œ•`‰æ
 
@@ -555,12 +855,22 @@ VOID MY_GAME_TITLE(VOID)
 //####### ƒvƒƒ[ƒO‰æ–Ê‚ÌŠÖ” ############# 
 VOID MY_GAME_PROLOGUE(VOID)
 {
+
+	//BGM‚ª—¬‚ê‚Ä‚¢‚È‚¢‚Æ‚«
+	if (CheckSoundMem(MUSIC_MY_TITLE.Handle) == 0)
+	{
+		ChangeVolumeSoundMem(255 * 50 / 100, MUSIC_MY_TITLE.Handle);	//BGM‚Ì‰¹—Ê‚ð50“‚É‚·‚é
+		PlaySoundMem(MUSIC_MY_TITLE.Handle, DX_PLAYTYPE_LOOP);			//BGM‚ð—¬‚·
+	}
+
 	if (AllKeyState[KEY_INPUT_SPACE] != 0)
 	{
 		GameSceneNow = (int)GAME_SCENE_PLAY;	//ƒvƒŒƒC‰æ–Ê‚É‘JˆÚ
 	}
 
-	DrawGraph(BackGround_P.X, BackGround_P.Y, BackGround_P.Handle, TRUE);	//ƒvƒƒ[ƒO‰æ‘œ•`‰æ
+	DrawGraph(BackGround.X, BackGround.Y, BackGround.Handle, TRUE);		//ƒ^ƒCƒgƒ‹”wŒi‰æ‘œ•`‰æ
+
+	MY_PLAY_BACKIMAGE_DRAW(); //ƒvƒƒ[ƒO‰æ‘œ‚ðƒXƒNƒ[ƒ‹
 
 	DrawString(0, 550, "SPACE‚ÅƒXƒLƒbƒv", GetColor(0, 0, 0));
 
@@ -570,19 +880,65 @@ VOID MY_GAME_PROLOGUE(VOID)
 //########### ƒvƒŒƒC‰æ–Ê‚ÌŠÖ” ############
 VOID MY_GAME_PLAY(VOID)
 {
+	StopSoundMem(MUSIC_MY_TITLE.Handle);
+
+	//BGM‚ª—¬‚ê‚Ä‚¢‚È‚¢‚Æ‚«
+	if (CheckSoundMem(MUSIC_MY_BGM_1.Handle) == 0)
+	{
+		ChangeVolumeSoundMem(255 * 50 / 100, MUSIC_MY_BGM_1.Handle);	//BGM‚Ì‰¹—Ê‚ð50“‚É‚·‚é
+		PlaySoundMem(MUSIC_MY_BGM_1.Handle, DX_PLAYTYPE_LOOP);			//BGM‚ð—¬‚·
+	}
+
 	MY_PLAY_PLAYER_OPERATION();
 
-	MY_PLAY_MAP_DRAW(MapImage_U);	//ƒ}ƒbƒv‚ð•`‰æ
+	MY_PLAY_MAP_DRAW(MapImage_U[0]);	//ƒ}ƒbƒv‚ð•`‰æ
 
-	MY_PLAY_MAP_DRAW(MapImage_S);	//ƒ}ƒbƒv‚ð•`‰æ
+	MY_PLAY_MAP_DRAW(MapImage_W[MapNowPos]);	//ƒ}ƒbƒv‚ð•`‰æ
 
-	MY_PLAY_MAP_DRAW(MapImage_W);	//ƒ}ƒbƒv‚ð•`‰æ
+	MY_PLAY_MAP_DRAW(MapImage_S[MapNowPos]);	//ƒ}ƒbƒv‚ð•`‰æ
 
-	MY_PLAY_PLAYER_DRAW(Myplayer);
+	MY_PLAY_MAP_DRAW_ATARI(&MapImage_A[MapNowPos]); //“–‚½‚è”»’è‚ÌÝ’è
 
-	//MY_PLAY_MAP_DRAW_ATARI(&MapImage_W, &MapImage_W, &MapImage_U);
+	MY_PLAY_MAP_DRAW(ItemImage_1[MapNowPos]);	//ƒAƒCƒeƒ€‚ð•`‰æ
 
-	DrawString(0, 0,"ƒvƒŒƒC‰æ–Ê(AƒL[‚ð‰Ÿ‚µ‚Ä‚­‚¾‚³‚¢)", GetColor(255, 255, 255));
+	MY_PLAY_PLAYER_DRAW(Myplayer);  //ƒvƒŒƒCƒ„[‚ð•`‰æ
+
+	MY_PLAY_ENEMY_DRAW(oni);		//“G‚ð•`‰æ
+
+	MY_PLAY_PLAYER_GETITEM();     //ƒAƒCƒeƒ€‚ÌŽæ“¾
+
+	MY_MAP_SCENE_MOVE();  //ƒ}ƒbƒv‚ðØ‚è‘Ö‚¦‚é
+
+	//Ž‚Á‚Ä‚¢‚éƒAƒCƒeƒ€‚ð•\Ž¦
+	if (AllKeyState[KEY_INPUT_I] == 1)
+	{
+		if (!itemdrowflag)
+		{
+			itemdrowflag = true;
+		}
+		else
+		{
+			itemdrowflag = false;
+		}
+	}
+	if (itemdrowflag)
+	{
+		for (int i = 0; i < GAME_MAP_ITEM_KIND; i++)
+		{
+			if (Myplayer.item[i] != 0)
+			{
+				DrawFormatString(0, i * 20 + 50, GetColor(255, 255, 255), "%s", ItemName[i]);
+			}
+		}
+	}
+
+
+
+
+
+
+
+	DrawString(0, 0, "ƒvƒŒƒC‰æ–Ê(AƒL[‚ð‰Ÿ‚µ‚Ä‚­‚¾‚³‚¢)", GetColor(255, 255, 255));
 
 	if (AllKeyState[KEY_INPUT_A] != 0)
 	{
@@ -592,6 +948,8 @@ VOID MY_GAME_PLAY(VOID)
 
 VOID MY_GAME_END(VOID)
 {
+	BOOL IsAtari = FALSE;  //“–‚½‚è”»’è
+
 	if (AllKeyState[KEY_INPUT_BACK] != 0)
 	{
 		GameSceneNow = (int)GAME_SCENE_TITLE;
@@ -630,6 +988,7 @@ BOOL MY_PLAY_INIT(VOID)
 		return FALSE;
 	}
 
+	MY_PG_INIT(); //ƒvƒƒ[ƒO‰æ‘œˆÊ’u‰Šú‰»
 
 	return TRUE;
 }
@@ -672,7 +1031,7 @@ BOOL MY_PLAYER_INIT(CHARADATA *charadata, CHARAIMAGE charaimage, int *num, int x
 	charadata->Speed = speed;
 
 	charadata->MoveDistX = x;		//¡‚Ì‹——£‚ðƒ}ƒbƒv‚ÌÅ‰‚©‚ç“®‚¢‚½‹——£‚Æ‚µ‚ÄÝ’è‚·‚é
-	charadata->MoveDistY = y;		
+	charadata->MoveDistY = y;
 
 	charadata->CanMoveUp = TRUE;		//ã‚ÉˆÚ“®‚Å‚«‚é
 	charadata->CanMoveDown = TRUE;		//‰º‚ÉˆÚ“®‚Å‚«‚é
@@ -687,11 +1046,113 @@ BOOL MY_PLAYER_INIT(CHARADATA *charadata, CHARAIMAGE charaimage, int *num, int x
 	charadata->atariWidth = 18;			//“–‚½‚è”»’è‚Ì•‚ð’š“x—Ç‚­Ý’è
 	charadata->atariHeight = 24;		//“–‚½‚è”»’è‚Ì‚‚³‚ð’š“x—Ç‚­Ý’è
 
-	//wsprintf(charadata->name, GAME_PLAYER_NAME);
+
+
+	//ƒAƒCƒeƒ€‚Ì‰Šú‰»
+	for (int kind = 0; kind < (int)GAME_MAP_ITEM_KIND; kind++)
+	{
+		charadata->item[kind] = 0;	//ƒAƒCƒeƒ€‚ð‰½‚àŽ‚Á‚Ä‚¢‚È‚¢
+	}
 
 	MY_SET_PLAYER_ATARI(charadata);	//ƒvƒŒƒCƒ„[‚Ì“–‚½‚è”»’è‚Ì—Ìˆæ‚ðÝ’è
 
 	return TRUE;
+}
+
+//########## “G‚ð‰Šú‰»‚·‚éŠÖ” ##########
+//ˆø@”FENEMY \‘¢‘Ì@  FÝ’è‚·‚éENEMY\‘¢‘Ì
+//ˆø@”FCHAR\‘¢‘Ì@@@FÝ’è‚·‚éCHARA\‘¢‘Ì
+//ˆø@”Fint* @@ @@@FÅ‰‚Ì‰æ‘œ‚Ì”Ô†i”z—ñ‚Ìæ“ªƒAƒhƒŒƒX‚ðˆø”‚Æ‚·‚éj
+//ˆø@”Fint@	@@@@@FÅ‰‚Ì‰æ‘œ‚ÌŒü‚«
+//ˆø@”Fint@	@@@@@F“G‚ÌÅ‰‚ÌˆÊ’uX
+//ˆø@”Fint@	@@@@@F“G‚ÌÅ‰‚ÌˆÊ’uY
+//ˆø@”Fint@	@@@@@FƒvƒŒƒCƒ„[‚ª‚±‚ÌXˆÊ’u‚Ü‚Å—ˆ‚é‚Æ“G‚ª•\Ž¦‚³‚ê‚é
+//ˆø@”Fint@	@@@@@FƒvƒŒƒCƒ„[‚ª‚±‚ÌYˆÊ’u‚Ü‚Å—ˆ‚é‚Æ“G‚ª•\Ž¦‚³‚ê‚é
+//ˆø@”Fint@	@@@@@FŽ¿—Ê
+//ˆø@”Fint@	@@@@@FˆÚ“®ƒXƒs[ƒh
+//ˆø@”FBOOL@	@@@F”òs‚Å‚«‚é‚©
+//–ß‚è’lFBOOLFƒGƒ‰[ŽžFFALSE
+BOOL MY_INIT_ENEMY(BOSS *e, CHARAIMAGE c, int *num, int Muki, int x, int y, int startX, int startY, int speed, int mass, BOOL fly)
+{
+	//*(num + 0)‚Í”z—ñ‚Ìæ“ªƒAƒhƒŒƒX
+
+	for (int mot = 0; mot < GAME_CHARA_MOTION_NUM; mot++)
+	{
+		e->Handle[mot] = c.Handle[*(num + mot)];	//‰æ‘œ‚Ìƒnƒ“ƒhƒ‹‚ð“ü‚ê‚é
+	}
+
+	e->X = x;								//“G‚ÌÅ‰‚ÌˆÊ’uX
+	e->Y = y;								//“G‚ÌÅ‰‚ÌˆÊ’uY
+	e->SetFirstX = x;						//“G‚Ì‰Šú•\Ž¦ˆÊ’uX
+	e->SetFirstY = y;						//“G‚Ì‰Šú•\Ž¦ˆÊ’uY
+	e->viewStartPointX = startX;			//ƒvƒŒƒCƒ„[‚ª‚±‚ÌXˆÊ’u‚Ü‚Å—ˆ‚é‚Æ“G‚ª•\Ž¦‚³‚ê‚é
+	e->viewStartPointY = startY;			//ƒvƒŒƒCƒ„[‚ª‚±‚ÌYˆÊ’u‚Ü‚Å—ˆ‚é‚Æ“G‚ª•\Ž¦‚³‚ê‚é
+
+	e->Width = c.Width[*(num + 0)];			//Å‰‚Ì‰æ‘œ‚Ì‰¡•‚ðÝ’è‚·‚é
+	e->Height = c.Height[*(num + 0)];		//Å‰‚Ì‰æ‘œ‚Ì‚‚³‚ðÝ’è‚·‚é
+	e->C_Width = c.C_Width[*(num + 0)];		//Å‰‚Ì‰æ‘œ‚Ì‰¡•‚Ì’†S‚ðÝ’è‚·‚é
+	e->C_Height = c.C_Height[*(num + 0)];	//Å‰‚Ì‰æ‘œ‚Ì‚‚³‚Ì’†S‚ðÝ’è‚·‚é
+
+	//ƒ}ƒbƒv‚Ð‚Æ‚Â‚ ‚½‚è‚Æ“¯‚¶‘å‚«‚³‚É‚·‚é
+	e->Width = GAME_MAP_YOKO_SIZE;
+	e->Height = GAME_MAP_TATE_SIZE;
+	e->C_Width = GAME_MAP_YOKO_SIZE / 2;
+	e->C_Height = GAME_MAP_TATE_SIZE / 2;
+
+	e->NowHandleNum = Muki;	//Å‰‚Ì‰æ‘œ‚ÌŒü‚«‚ÌÝ’è
+	e->muki = Muki;			//“G‚ÌŒü‚«
+	e->SetFirstmuki = Muki;	//“G‚ÌÅ‰‚ÌŒü‚«
+
+	e->NowHandleCnt = 0;	//‰æ‘œƒJƒEƒ“ƒ^(‰æ‘œ‚ª•Ï‚í‚éŽžŠÔ)‚ð‰Šú‰»
+	e->NowHandleCntMAX = 4;	//‰æ‘œƒJƒEƒ“ƒ^(‰æ‘œ‚ª•Ï‚í‚éŽžŠÔ)MAX‚ð‰Šú‰»
+
+	//***** ˆÈ‰ºAƒpƒ‰ƒ[ƒ^Ý’è **************************************************
+	e->Speed = speed;				//ˆÚ“®‘¬“x‚ðÝ’è‚·‚é
+
+	e->CanMoveLeft = TRUE;			//¶‚ÉˆÚ“®‚Å‚«‚é
+	e->CanMoveRight = TRUE;			//‰E‚ÉˆÚ“®‚Å‚«‚é
+
+	e->IsAlive = TRUE;				//“G‚Í‚Ü‚¾¶‚«‚Ä‚¢‚é
+	e->IsView = FALSE;				//“G‚Í•\Ž¦‚Å‚«‚È‚¢
+
+	e->IsPassed = FALSE;			//’Ê‰ß‚µ‚Ä‚¢‚È‚¢
+
+	e->atariX = 2;			//“–‚½‚è”»’è‚ÌXˆÊ’u‚ðAƒCƒCŠ´‚¶‚ÉÝ’è	¦‰æ‘œ•\Ž¦‚Æ“–‚½‚è”»’è‚ÌXˆÊ’u‚ª“¯‚¶‚Æ‚ÍAŒÀ‚ç‚È‚¢
+	e->atariY = 14;			//“–‚½‚è”»’è‚ÌYˆÊ’u‚ðAƒCƒCŠ´‚¶‚ÉÝ’è	¦‰æ‘œ•\Ž¦‚Æ“–‚½‚è”»’è‚ÌYˆÊ’u‚ª“¯‚¶‚Æ‚ÍAŒÀ‚ç‚È‚¢
+	e->atariWidth = 24;		//“–‚½‚è”»’è‚Ì•@‚ðAƒCƒCŠ´‚¶‚ÉÝ’è	¦‰æ‘œ•\Ž¦‚Æ“–‚½‚è”»’è‚Ì•‚ª“¯‚¶‚Æ‚ÍAŒÀ‚ç‚È‚¢
+	e->atariHeight = 18;	//“–‚½‚è”»’è‚Ì‚‚³‚ðAƒCƒCŠ´‚¶‚ÉÝ’è	¦‰æ‘œ•\Ž¦‚Æ“–‚½‚è”»’è‚Ì‚‚³‚ª“¯‚¶‚Æ‚ÍAŒÀ‚ç‚È‚¢
+
+	MY_SET_ENEMY_ATARI(e);	//“G‚Ì“–‚½‚è”»’è‚Ì—Ìˆæ‚ðÝ’è‚·‚é
+
+	return TRUE;
+}
+
+//####### ƒvƒƒ[ƒO‰æ‘œˆÊ’u‰Šú‰» ###########
+VOID MY_PG_INIT(VOID)
+{
+	BackGround_P.X = -BackGround_P.Width;
+	BackGround_P.Y = 0;
+}
+
+//####### ƒvƒƒ[ƒO‚ðƒXƒNƒ[ƒ‹‚·‚éŠÖ” #########
+VOID MY_PLAY_BACKIMAGE_DRAW(VOID)
+{
+
+	// •`‰æƒuƒŒƒ“ƒhƒ‚[ƒh‚ðƒAƒ‹ƒtƒ@ƒuƒŒƒ“ƒhi‚T‚O“j‚É‚·‚é
+	SetDrawBlendMode(DX_BLENDMODE_ALPHA, 128);	//255‚ªMAX’l
+
+	DrawBox(0, GAME_HEIGHT / 8 * 1, GAME_WIDTH, GAME_HEIGHT / 8 * 7, GetColor(255, 255, 255), TRUE);
+
+	//•`‰æƒuƒŒƒ“ƒhƒ‚[ƒh‚ðƒm[ƒuƒŒƒ“ƒh‚É‚·‚é
+	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+
+	DrawGraph(BackGround_P.X, BackGround_P.Y, BackGround_P.Handle, TRUE);	//ƒvƒƒ[ƒO‰æ‘œ•`‰æ
+
+	BackGround_P.X += ScrollDistPlusYoko;	//”wŒi‚ÌˆÊ’u‚ð‚¸‚ç‚·
+
+
+
+	return;
 }
 
 //########## ƒLƒƒƒ‰ƒNƒ^[‚Æƒ}ƒbƒv‚Ì“–‚½‚è”»’è‚ð‚·‚éŠÖ”(“–‚½‚Á‚½êŠ‚ð’m‚é) ##########
@@ -746,6 +1207,18 @@ VOID MY_SET_PLAYER_ATARI(CHARADATA *charadata)
 	return;
 }
 
+//########## “G‚Ì“–‚½‚è”»’è‚Ì—Ìˆæ‚ðÝ’è‚·‚éŠÖ” ##########
+VOID MY_SET_ENEMY_ATARI(BOSS *e)
+{
+	//“–‚½‚è”»’è‚Ì—Ìˆæ‚ÌÝ’è
+	e->atariRect.left = e->X + e->atariX - ScrollCntYoko;						//Œ»Ý‚ÌXˆÊ’u { “–‚½‚è”»’è‚ÌXˆÊ’u	- ƒXƒNƒ[ƒ‹‚µ‚½•ª‚ð–ß‚·
+	e->atariRect.top = e->Y + e->atariY;										//Œ»Ý‚ÌYˆÊ’u { “–‚½‚è”»’è‚ÌYˆÊ’u
+	e->atariRect.right = e->X + e->atariX + e->atariWidth - ScrollCntYoko - 1;	//Œ»Ý‚ÌXˆÊ’u { “–‚½‚è”»’è‚ÌXˆÊ’u { “–‚½‚è”»’è‚Ì• - ƒXƒNƒ[ƒ‹‚µ‚½•ª‚ð–ß‚·
+	e->atariRect.bottom = e->Y + e->atariY + e->atariHeight - 1;				//Œ»Ý‚ÌYˆÊ’u { “–‚½‚è”»’è‚ÌYˆÊ’u { “–‚½‚è”»’è‚Ì‚‚³
+
+	return;
+}
+
 //########## ƒvƒŒƒCƒ„[‚ð‘€ì‚·‚éŠÖ” ###########
 VOID MY_PLAY_PLAYER_OPERATION(VOID)
 {
@@ -773,10 +1246,11 @@ BOOL MY_PLAY_PLAYER_OPERATION_KEY(int *x, int *y)
 		Myplayer.atariRect.left -= 4;	//­‚µ“–‚½‚è”»’è‚Ì—Ìˆæ‚ð¶‚É‚¸‚ç‚·
 		Myplayer.atariRect.right -= 4;	//­‚µ“–‚½‚è”»’è‚Ì—Ìˆæ‚ð¶‚É‚¸‚ç‚·
 
-		if (MY_CHECK_RECT_ATARI_CHARA_MAP_ATARIBASHO(Myplayer.atariRect,MapImage_W.rect_NG, x, y) == TRUE)
+		if (MY_CHECK_RECT_ATARI_CHARA_MAP_ATARIBASHO(Myplayer.atariRect, MapImage_A[MapNowPos].rect_NG, x, y) == TRUE)
 		{
 			Myplayer.CanMoveLeft = FALSE;	//	¶‚És‚¯‚È‚¢
 		}
+
 
 		if (Myplayer.CanMoveLeft == TRUE)	//¶‚ÉˆÚ“®‚Å‚«‚é‚Æ‚«
 		{
@@ -812,10 +1286,11 @@ BOOL MY_PLAY_PLAYER_OPERATION_KEY(int *x, int *y)
 		Myplayer.atariRect.left += 4;	//­‚µAƒvƒŒƒCƒ„[‚Ì“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‰E‚É‚¸‚ç‚·
 		Myplayer.atariRect.right += 4;	//­‚µAƒvƒŒƒCƒ„[‚Ì“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‰E‚É‚¸‚ç‚·
 
-		if (MY_CHECK_RECT_ATARI_CHARA_MAP_ATARIBASHO(Myplayer.atariRect, MapImage_W.rect_NG, x, y) == TRUE)	//‰E‚És‚¯‚È‚¢‚à‚Ì‚Æ“–‚½‚Á‚½‚Æ‚«
+		if (MY_CHECK_RECT_ATARI_CHARA_MAP_ATARIBASHO(Myplayer.atariRect, MapImage_A[MapNowPos].rect_NG, x, y) == TRUE)	//‰E‚És‚¯‚È‚¢‚à‚Ì‚Æ“–‚½‚Á‚½‚Æ‚«
 		{
 			Myplayer.CanMoveRight = FALSE;	//‰E‚És‚¯‚È‚¢
 		}
+
 
 		if (Myplayer.CanMoveRight == TRUE)
 		{
@@ -841,128 +1316,130 @@ BOOL MY_PLAY_PLAYER_OPERATION_KEY(int *x, int *y)
 		}
 	}
 
-			if (AllKeyState[KEY_INPUT_UP] != 0)		//ã–îˆóƒL[‚ª‰Ÿ‚³‚ê‚Ä‚¢‚é‚Æ‚«
+	if (AllKeyState[KEY_INPUT_UP] != 0)		//ã–îˆóƒL[‚ª‰Ÿ‚³‚ê‚Ä‚¢‚é‚Æ‚«
+	{
+		IsKeyDown = TRUE;
+
+		Myplayer.CanMoveUp = TRUE;	//ã•ûŒü‚É‚Ü‚¾“®‚¯‚é
+
+		MY_SET_PLAYER_ATARI(&Myplayer);
+		Myplayer.atariRect.top -= 4;
+		Myplayer.atariRect.bottom -= 4;
+
+		if (MY_CHECK_RECT_ATARI_CHARA_MAP_ATARIBASHO(Myplayer.atariRect, MapImage_A[MapNowPos].rect_NG, x, y) == TRUE)
+		{
+			Myplayer.CanMoveUp = FALSE;	//ã‚És‚¯‚È‚¢
+		}
+
+
+		if (Myplayer.CanMoveUp == TRUE)		//ã‚ÉˆÚ“®‚Å‚«‚é‚Æ‚«
+		{
+			if (Myplayer.ScrollOK_Y == FALSE)
 			{
-				IsKeyDown = TRUE;
-
-				Myplayer.CanMoveUp = TRUE;	//ã•ûŒü‚É‚Ü‚¾“®‚¯‚é
-
-				MY_SET_PLAYER_ATARI(&Myplayer);
-				Myplayer.atariRect.top -= 4;
-				Myplayer.atariRect.bottom -= 4;
-
-				if (MY_CHECK_RECT_ATARI_CHARA_MAP_ATARIBASHO(Myplayer.atariRect, MapImage_W.rect_NG, x, y) == TRUE)
+				if (Myplayer.Y > 0)
 				{
-					Myplayer.CanMoveUp = FALSE;	//ã‚És‚¯‚È‚¢
-				}
-
-				if (Myplayer.CanMoveUp == TRUE)		//ã‚ÉˆÚ“®‚Å‚«‚é‚Æ‚«
-				{
-					if (Myplayer.ScrollOK_Y == FALSE)
-					{
-						if (Myplayer.Y > 0)
-						{
-							Myplayer.Y -= Myplayer.Speed;
-						}
-					}
-					else
-					{
-						if (ScrollCntTate > 0)
-						{
-							ScrollCntTate -= Myplayer.Speed;
-						}
-					}
-
-					if (Myplayer.MoveDistY > 0)
-					{
-						Myplayer.MoveDistY -= Myplayer.Speed;
-					}
+					Myplayer.Y -= Myplayer.Speed;
 				}
 			}
-			
-
-			if (AllKeyState[KEY_INPUT_DOWN] != 0)	//‰º–îˆóƒL[‚ª‰Ÿ‚³‚ê‚Ä‚¢‚½Žž
+			else
 			{
-				IsKeyDown = TRUE;
-
-				Myplayer.CanMoveDown = TRUE;
-
-				Myplayer.CanMoveDown = TRUE;	//ã•ûŒü‚É‚Ü‚¾“®‚¯‚é
-
-				MY_SET_PLAYER_ATARI(&Myplayer);
-				Myplayer.atariRect.top += 4;
-				Myplayer.atariRect.bottom += 4;
-
-				if (MY_CHECK_RECT_ATARI_CHARA_MAP_ATARIBASHO(Myplayer.atariRect, MapImage_W.rect_NG, x, y) == TRUE)
+				if (ScrollCntTate > 0)
 				{
-					Myplayer.CanMoveDown = FALSE;	//ã‚És‚¯‚È‚¢
-				}
-
-				if (Myplayer.CanMoveDown == TRUE)	//‰º‚ÉˆÚ“®‚Å‚«‚é‚Æ‚«
-				{
-					if (Myplayer.ScrollOK_Y == FALSE)
-					{
-						if (Myplayer.Y + Myplayer.Width < GAME_HEIGHT)
-						{
-							Myplayer.Y += Myplayer.Speed;
-						}
-					}
-					else
-					{
-						if (ScrollCntTate < GAME_MAP_TATE_SIZE*GAME_MAP_TATE)
-						{
-							ScrollCntTate += Myplayer.Speed;
-						}
-					}
-
-					if (Myplayer.MoveDistY < GAME_MAP_TATE_SIZE*(GAME_MAP_TATE - 1))
-					{
-						Myplayer.MoveDistY += Myplayer.Speed;
-					}
+					ScrollCntTate -= Myplayer.Speed;
 				}
 			}
 
-			//ƒ}ƒbƒv‚Ì¶‘¤‚É‚¢‚é‚Æ‚«‚ÍAƒvƒŒƒCƒ„[‚ð“®‚©‚·
-			if (Myplayer.MoveDistX > 0 &&
-				Myplayer.MoveDistX <= GAME_MAP_YOKO_SIZE * 10)	//ƒvƒŒƒCƒ„[‚Ì“®‚¢‚½‹——£‚ªˆê’èˆÈã‚Å‚ ‚ê‚Î
+			if (Myplayer.MoveDistY > 0)
 			{
-				Myplayer.ScrollOK_X = FALSE;					//ƒ}ƒbƒv‚ðŽ~‚ß‚ÄAƒvƒŒƒCƒ„[‚ð“®‚©‚·
+				Myplayer.MoveDistY -= Myplayer.Speed;
+			}
+		}
+	}
+
+
+	if (AllKeyState[KEY_INPUT_DOWN] != 0)	//‰º–îˆóƒL[‚ª‰Ÿ‚³‚ê‚Ä‚¢‚½Žž
+	{
+		IsKeyDown = TRUE;
+
+		Myplayer.CanMoveDown = TRUE;
+
+		Myplayer.CanMoveDown = TRUE;	//ã•ûŒü‚É‚Ü‚¾“®‚¯‚é
+
+		MY_SET_PLAYER_ATARI(&Myplayer);
+		Myplayer.atariRect.top += 4;
+		Myplayer.atariRect.bottom += 4;
+
+		if (MY_CHECK_RECT_ATARI_CHARA_MAP_ATARIBASHO(Myplayer.atariRect, MapImage_A[MapNowPos].rect_NG, x, y) == TRUE)
+		{
+			Myplayer.CanMoveDown = FALSE;	//ã‚És‚¯‚È‚¢
+		}
+
+
+		if (Myplayer.CanMoveDown == TRUE)	//‰º‚ÉˆÚ“®‚Å‚«‚é‚Æ‚«
+		{
+			if (Myplayer.ScrollOK_Y == FALSE)
+			{
+				if (Myplayer.Y + Myplayer.Width < GAME_HEIGHT)
+				{
+					Myplayer.Y += Myplayer.Speed;
+				}
+			}
+			else
+			{
+				if (ScrollCntTate < GAME_MAP_TATE_SIZE*GAME_MAP_TATE)
+				{
+					ScrollCntTate += Myplayer.Speed;
+				}
 			}
 
-			//ƒ}ƒbƒv‚Ì^‚ñ’†‚ ‚½‚è‚É‚¢‚é‚Æ‚«‚ÍAƒ}ƒbƒv‚ð“®‚©‚·
-			if (Myplayer.MoveDistX > GAME_MAP_YOKO_SIZE * 10 &&
-				Myplayer.MoveDistX <= GAME_MAP_YOKO_SIZE * (GAME_MAP_YOKO - 15))
+			if (Myplayer.MoveDistY < GAME_MAP_TATE_SIZE*(GAME_MAP_TATE - 1))
 			{
-				Myplayer.ScrollOK_X = TRUE;					//ƒ}ƒbƒv‚ð“®‚©‚·
+				Myplayer.MoveDistY += Myplayer.Speed;
 			}
+		}
+	}
 
-			//ƒ}ƒbƒv‚Ì‰E‘¤‚É‚¢‚é‚Æ‚«‚ÍAƒvƒŒƒCƒ„[‚ð“®‚©‚·
-			if (Myplayer.MoveDistX > GAME_MAP_YOKO_SIZE*(GAME_MAP_YOKO - 15) &&
-				Myplayer.MoveDistX <= GAME_MAP_YOKO_SIZE * GAME_MAP_YOKO)
-			{
-				Myplayer.ScrollOK_X = FALSE;				//ƒ}ƒbƒv‚ðŽ~‚ß‚ÄAƒvƒŒƒCƒ„[‚ð“®‚©‚·
-			}
+	//ƒ}ƒbƒv‚Ì¶‘¤‚É‚¢‚é‚Æ‚«‚ÍAƒvƒŒƒCƒ„[‚ð“®‚©‚·
+	if (Myplayer.MoveDistX > 0 &&
+		Myplayer.MoveDistX <= GAME_MAP_YOKO_SIZE * 10)	//ƒvƒŒƒCƒ„[‚Ì“®‚¢‚½‹——£‚ªˆê’èˆÈã‚Å‚ ‚ê‚Î
+	{
+		Myplayer.ScrollOK_X = FALSE;					//ƒ}ƒbƒv‚ðŽ~‚ß‚ÄAƒvƒŒƒCƒ„[‚ð“®‚©‚·
+	}
 
-			//ƒ}ƒbƒv‚Ìã‘¤‚É‚¢‚é‚Æ‚«‚ÍAƒvƒŒƒCƒ„[‚ð“®‚©‚·
-			if (Myplayer.MoveDistY > 0 &&
-				Myplayer.MoveDistY <= GAME_MAP_TATE_SIZE * 10)
-			{
-				Myplayer.ScrollOK_Y = FALSE;				//ƒ}ƒbƒv‚ðŽ~‚ß‚ÄAƒvƒŒƒCƒ„[‚ð“®‚©‚·
-			}
+	//ƒ}ƒbƒv‚Ì^‚ñ’†‚ ‚½‚è‚É‚¢‚é‚Æ‚«‚ÍAƒ}ƒbƒv‚ð“®‚©‚·
+	if (Myplayer.MoveDistX > GAME_MAP_YOKO_SIZE * 10 &&
+		Myplayer.MoveDistX <= GAME_MAP_YOKO_SIZE * (GAME_MAP_YOKO - 15))
+	{
+		Myplayer.ScrollOK_X = TRUE;					//ƒ}ƒbƒv‚ð“®‚©‚·
+	}
 
-			//ƒ}ƒbƒv‚Ì^‚ñ’†‚ ‚½‚è‚É‚¢‚é‚Æ‚«‚ÍAƒ}ƒbƒv‚ð“®‚©‚·
-			if (Myplayer.MoveDistY > GAME_MAP_TATE_SIZE * 10 &&
-				Myplayer.MoveDistY <= GAME_MAP_TATE_SIZE * (GAME_MAP_TATE - 9))	//ƒvƒŒƒCƒ„[‚Ì“®‚¢‚½‹——£‚ªˆê’èˆÈã‚Å‚ ‚ê‚Î(ŠJŽn’n“_)
-			{
-				Myplayer.ScrollOK_Y = TRUE;				//ƒ}ƒbƒv‚ð“®‚©‚·
-			}
+	//ƒ}ƒbƒv‚Ì‰E‘¤‚É‚¢‚é‚Æ‚«‚ÍAƒvƒŒƒCƒ„[‚ð“®‚©‚·
+	if (Myplayer.MoveDistX > GAME_MAP_YOKO_SIZE*(GAME_MAP_YOKO - 15) &&
+		Myplayer.MoveDistX <= GAME_MAP_YOKO_SIZE * GAME_MAP_YOKO)
+	{
+		Myplayer.ScrollOK_X = FALSE;				//ƒ}ƒbƒv‚ðŽ~‚ß‚ÄAƒvƒŒƒCƒ„[‚ð“®‚©‚·
+	}
 
-			//ƒ}ƒbƒv‚Ì‰º‘¤‚É‚¢‚é‚Æ‚«‚ÍAƒvƒŒƒCƒ„[‚ð“®‚©‚·
-			if (Myplayer.MoveDistY > GAME_MAP_TATE_SIZE*(GAME_MAP_TATE - 9) &&	//ƒvƒŒƒCƒ„[‚Ì“®‚¢‚½‹——£‚ªˆê’èˆÈã‚Å‚ ‚ê‚Î(I—¹’n“_)
-				Myplayer.MoveDistY <= GAME_MAP_TATE_SIZE * GAME_MAP_TATE)
-			{
-				Myplayer.ScrollOK_Y = FALSE;	//ƒ}ƒbƒv‚ðŽ~‚ß‚ÄAƒvƒŒƒCƒ„[‚ð“®‚©‚·
-			}
+	//ƒ}ƒbƒv‚Ìã‘¤‚É‚¢‚é‚Æ‚«‚ÍAƒvƒŒƒCƒ„[‚ð“®‚©‚·
+	if (Myplayer.MoveDistY > 0 &&
+		Myplayer.MoveDistY <= GAME_MAP_TATE_SIZE * 10)
+	{
+		Myplayer.ScrollOK_Y = FALSE;				//ƒ}ƒbƒv‚ðŽ~‚ß‚ÄAƒvƒŒƒCƒ„[‚ð“®‚©‚·
+	}
+
+	//ƒ}ƒbƒv‚Ì^‚ñ’†‚ ‚½‚è‚É‚¢‚é‚Æ‚«‚ÍAƒ}ƒbƒv‚ð“®‚©‚·
+	if (Myplayer.MoveDistY > GAME_MAP_TATE_SIZE * 10 &&
+		Myplayer.MoveDistY <= GAME_MAP_TATE_SIZE * (GAME_MAP_TATE - 9))	//ƒvƒŒƒCƒ„[‚Ì“®‚¢‚½‹——£‚ªˆê’èˆÈã‚Å‚ ‚ê‚Î(ŠJŽn’n“_)
+	{
+		Myplayer.ScrollOK_Y = TRUE;				//ƒ}ƒbƒv‚ð“®‚©‚·
+	}
+
+	//ƒ}ƒbƒv‚Ì‰º‘¤‚É‚¢‚é‚Æ‚«‚ÍAƒvƒŒƒCƒ„[‚ð“®‚©‚·
+	if (Myplayer.MoveDistY > GAME_MAP_TATE_SIZE*(GAME_MAP_TATE - 9) &&	//ƒvƒŒƒCƒ„[‚Ì“®‚¢‚½‹——£‚ªˆê’èˆÈã‚Å‚ ‚ê‚Î(I—¹’n“_)
+		Myplayer.MoveDistY <= GAME_MAP_TATE_SIZE * GAME_MAP_TATE)
+	{
+		Myplayer.ScrollOK_Y = FALSE;	//ƒ}ƒbƒv‚ðŽ~‚ß‚ÄAƒvƒŒƒCƒ„[‚ð“®‚©‚·
+	}
 
 	return IsKeyDown;
 }
@@ -1001,7 +1478,39 @@ BOOL MY_GAZOU_LOAD(GAZOU *g, int x, int y, const char *path)
 BOOL MY_MAP_LOAD_BUNKATSU(MAP *m, int bun_num, int bun_x_num, int bun_y_num, int bun_width, int bun_height, const char *path)
 {
 	int ret = 0;
-														//‰æ‘œ‚ðƒƒ‚ƒŠ‚É•ªŠ„‚µ‚Ä“Ç‚Ýž‚ÝAƒnƒ“ƒhƒ‹‚ðŽæ“¾
+	//‰æ‘œ‚ðƒƒ‚ƒŠ‚É•ªŠ„‚µ‚Ä“Ç‚Ýž‚ÝAƒnƒ“ƒhƒ‹‚ðŽæ“¾
+	ret = LoadDivGraph(path, bun_num, bun_x_num, bun_y_num, bun_width, bun_height, m->Handle);
+
+	if (ret == -1) { return FALSE; }	//‰æ‘œ“Ç‚Ýž‚ÝƒGƒ‰[
+
+	for (int cnt = 0; cnt < GAME_MAP_1_YOKO_MAX * GAME_MAP_1_TATE_MAX; cnt++)
+	{
+		//‰æ‘œƒTƒCƒY‚ðŽæ“¾
+		GetGraphSize(
+			m->Handle[cnt],		//ƒnƒ“ƒhƒ‹‚©‚çA‰æ‘œ‚Ì•‚Æ‚‚³‚ðŽæ“¾
+			&m->Width[cnt],		//MAP\‘¢‘Ì‚Ì•@‚ÉA‰æ‘œ‚Ì•@‚ðÝ’è‚·‚é
+			&m->Height[cnt]);	//MAP\‘¢‘Ì‚Ì‹t‚³‚ÉA‰æ‘œ‚Ì‚‚³‚ðÝ’è‚·‚é			
+
+		m->C_Width[cnt] = m->Width[cnt] / 2;			//‰æ‘œ‚Ì‰¡ƒTƒCƒY‚Ì’†S‚ðŽæ“¾
+		m->C_Height[cnt] = m->Height[cnt] / 2;			//‰æ‘œ‚ÌcƒTƒCƒY‚Ì’†S‚ðŽæ“¾
+	}
+
+	return TRUE;
+}
+
+//########## MAP‚ð•ªŠ„‚µ‚Ä“Ç‚Ýž‚ÞÝ’è‚ð‚·‚éŠÖ” ##########
+//ˆø@”FMAP\‘¢‘Ì@FÝ’è‚·‚é‰æ‘œ\‘¢‘Ì(•ªŠ„)‚Ì•Ï”
+//ˆø@”Fint@F‰æ‘œ‚Ì•ªŠ„”
+//ˆø@”Fint@F‰æ‘œ‚Ì‰¡‚Ì•ªŠ„”
+//ˆø@”Fint@F‰æ‘œ‚Ìc‚Ì•ªŠ„”
+//ˆø@”Fint@F‰æ‘œ‚Ì‰¡‚Ì•ªŠ„ƒTƒCƒY
+//ˆø@”Fint@F‰æ‘œ‚Ìc‚Ì•ªŠ„ƒTƒCƒY
+//ˆø@”Fconst char *F“Ç‚Ýž‚Þ‰æ‘œ‚Ìƒtƒ@ƒCƒ‹ƒpƒX
+//–ß‚è’lFBOOLFƒGƒ‰[ŽžFFALSE
+BOOL MY_MAP_A_LOAD_BUNKATSU(MAP *m, int bun_num, int bun_x_num, int bun_y_num, int bun_width, int bun_height, const char *path)
+{
+	int ret = 0;
+	//‰æ‘œ‚ðƒƒ‚ƒŠ‚É•ªŠ„‚µ‚Ä“Ç‚Ýž‚ÝAƒnƒ“ƒhƒ‹‚ðŽæ“¾
 	ret = LoadDivGraph(path, bun_num, bun_x_num, bun_y_num, bun_width, bun_height, m->Handle);
 
 	if (ret == -1) { return FALSE; }	//‰æ‘œ“Ç‚Ýž‚ÝƒGƒ‰[
@@ -1139,7 +1648,7 @@ BOOL MY_CHARA_LOAD_BUNKATSU(CHARAIMAGE *c, int bun_num, int bun_x_num, int bun_y
 
 	wsprintf(c->FilePath, path);  //ƒtƒ@ƒCƒ‹‚ÌƒpƒX‚ðƒRƒs[
 
-	
+
 	retLoad = LoadDivGraph(c->FilePath, bun_num, bun_x_num, bun_y_num, bun_width, bun_height, c->Handle);	//‰æ‘œ‚ðƒƒ‚ƒŠ‚É•ªŠ„‚µ‚Ä“Ç‚Ýž‚ÝAƒnƒ“ƒhƒ‹‚ðŽæ“¾
 
 	if (retLoad == -1) { return FALSE; }	//‰æ‘œ“Ç‚Ýž‚ÝƒGƒ‰[
@@ -1159,43 +1668,16 @@ BOOL MY_CHARA_LOAD_BUNKATSU(CHARAIMAGE *c, int bun_num, int bun_x_num, int bun_y
 	return TRUE;
 }
 
-//########## ƒ}ƒbƒv‚Ì(ã)”»’è‚ÌŽí—Þ‚ÌÝ’è‚ð‚·‚é ########
-BOOL MY_MAP_READ_CSV_UE_KIND_SET(MAP *mapdata)
+//########## ƒ}ƒbƒv(F1)”»’è‚ÌŽí—Þ‚ðÝ’è‚·‚é ########
+BOOL MY_MAP_READ_CSV_KIND_SET(MAP *mapdata)
+
 {
 	int Soeji;
 
 	//’Ês‚Å‚«‚éƒ}ƒbƒv
 	Soeji = 0;
-	mapdata->mapOKKind[Soeji++] = 149;	//ŠK’i
-	mapdata->mapOKKind[Soeji++] = 150;	//ŠK’i
-	mapdata->mapOKKind[Soeji++] = 151;	//ŠK’i
-	mapdata->mapOKKind[Soeji++] = 165;	//ŠK’i
-	mapdata->mapOKKind[Soeji++] = 166;	//ŠK’i
-	mapdata->mapOKKind[Soeji++] = 167;	//ŠK’i
-	mapdata->mapOKKind[Soeji++] = 181;	//ŠK’i
-	mapdata->mapOKKind[Soeji++] = 182;	//ŠK’i
-	mapdata->mapOKKind[Soeji++] = 183;	//ŠK’i
-	//’Ês‚Å‚«‚éŽí—Þ‚ÌŽc‚è‚ð-1‚Å–„‚ß‚é
-	Soeji = 0;
-	for (int cnt = Soeji; cnt < GAME_MAP_OK_KIND; cnt++)
-	{
-		mapdata->mapOKKind[cnt] = -1;
-	}
-
-	//’Ês‚Å‚«‚È‚¢Ží—Þ‚ÌŽc‚è‚ð-1‚Å–„‚ß‚é
-	Soeji = 0;
-	for (int cnt = Soeji; cnt < GAME_MAP_NG_KIND; cnt++)
-	{
-		mapdata->mapNGKind[cnt] = -1;
-	}
-
-	return TRUE;
-}
-
-//########## ƒ}ƒbƒv(’†)”»’è‚ÌŽí—Þ‚ðÝ’è‚·‚é ###########
-BOOL MY_MAP_READ_CSV_NAKA_KIND_SET(MAP *mapdata)
-{
-	int Soeji;
+	mapdata->mapOKKind[Soeji++] = 4;
+	mapdata->mapOKKind[Soeji++] = 5;	//ŠK’i‚Ì’†S
 
 	//’Ês‚Å‚«‚éŽí—Þ‚ÌŽc‚è‚ð-1‚Å–„‚ß‚é
 	Soeji = 0;
@@ -1204,61 +1686,20 @@ BOOL MY_MAP_READ_CSV_NAKA_KIND_SET(MAP *mapdata)
 		mapdata->mapOKKind[cnt] = -1;
 	}
 
-
-	//’Ês‚Å‚«‚È‚¢ƒ}ƒbƒv
+	//’Ês‚Å‚«‚È‚¢
 	Soeji = 0;
 	mapdata->mapNGKind[Soeji++] = 0;
-	mapdata->mapNGKind[Soeji++] = 1;
-	mapdata->mapNGKind[Soeji++] = 2;
-	mapdata->mapNGKind[Soeji++] = 8;
-	mapdata->mapNGKind[Soeji++] = 9;
-	mapdata->mapNGKind[Soeji++] = 10;
-	mapdata->mapNGKind[Soeji++] = 16;
-	mapdata->mapNGKind[Soeji++] = 17;
-	mapdata->mapNGKind[Soeji++] = 18;
-	mapdata->mapNGKind[Soeji++] = 24;
-	mapdata->mapNGKind[Soeji++] = 25;
-	mapdata->mapNGKind[Soeji++] = 26;
-
 	//’Ês‚Å‚«‚È‚¢Ží—Þ‚ÌŽc‚è‚ð-1‚Å–„‚ß‚é
 	for (int cnt = Soeji; cnt < GAME_MAP_NG_KIND; cnt++)
 	{
-		mapdata->mapNGKind[cnt] = -1;
+		mapdata->mapNGKind[cnt] = 0;
 	}
 
 	return TRUE;
 }
-
-//########## ƒ}ƒbƒv(‰º)”»’è‚ÌŽí—Þ‚ðÝ’è‚·‚é ########
-BOOL MY_MAP_READ_CSV_SITA_KIND_SET(MAP *mapdata)
-
-{
-	int Soeji;
-
-	//’Ês‚Å‚«‚éƒ}ƒbƒv
-	Soeji = 0;
-	mapdata->mapOKKind[Soeji++] = 0;
-
-	//’Ês‚Å‚«‚éŽí—Þ‚ÌŽc‚è‚ð-1‚Å–„‚ß‚é
-	Soeji = 0;
-	for (int cnt = Soeji; cnt < GAME_MAP_OK_KIND; cnt++)
-	{
-		mapdata->mapOKKind[cnt] = -1;
-	}
-
-	//’Ês‚Å‚«‚È‚¢Ží—Þ‚ÌŽc‚è‚ð-1‚Å–„‚ß‚é
-	Soeji = 0;
-	for (int cnt = Soeji; cnt < GAME_MAP_NG_KIND; cnt++)
-	{
-		mapdata->mapNGKind[cnt] = -1;
-	}
-
-	return TRUE;
-}
-
 
 //########## ƒQ[ƒ€ƒ}ƒbƒv‚ÌCSV‚ð“Ç‚Ýž‚ÞŠÖ” ##########
-BOOL MY_MAP_READ_CSV_NUM(MAP *mapdata, const char *path,const char *mapname)
+BOOL MY_MAP_READ_CSV_NUM(MAP *mapdata, const char *path, const char *mapname)
 {
 
 	FILE  *fp;
@@ -1272,7 +1713,7 @@ BOOL MY_MAP_READ_CSV_NUM(MAP *mapdata, const char *path,const char *mapname)
 
 	int result = 0;			//ƒtƒ@ƒCƒ‹‚ÌÅŒã‚©ƒ`ƒFƒbƒN
 	int LoopCnt = 0;		//ƒ‹[ƒvƒJƒEƒ“ƒ^
-							
+
 	//ƒtƒ@ƒCƒ‹‚©‚ç”’l‚ðˆê‚Â“Ç‚Ýž‚Ý(%d,)A”z—ñ‚ÉŠi”[‚·‚é
 	while (fscanf(fp, "%d,", &mapdata->data[LoopCnt / GAME_MAP_YOKO][LoopCnt % GAME_MAP_YOKO]) != EOF)	//End Of Fileiƒtƒ@ƒCƒ‹‚ÌÅŒãj‚Å‚Í‚È‚¢‚Æ‚«ŒJ‚è•Ô‚·
 	{
@@ -1285,14 +1726,91 @@ BOOL MY_MAP_READ_CSV_NUM(MAP *mapdata, const char *path,const char *mapname)
 
 	wsprintf(mapdata->name, mapname); //ƒ}ƒbƒv‚Ì–¼Ì‚ðƒRƒs[
 
-	
-	
+	for (int tate = 0; tate < GAME_MAP_TATE; tate++)
+	{
+		for (int yoko = 0; yoko < GAME_MAP_YOKO; yoko++)
+		{
+			mapdata->rect_NG[tate][yoko].left = 0;
+			mapdata->rect_NG[tate][yoko].top = 0;
+			mapdata->rect_NG[tate][yoko].right = 0;
+			mapdata->rect_NG[tate][yoko].bottom = 0;
+
+			mapdata->rect_NG_First[tate][yoko] = mapdata->rect_NG[tate][yoko];
+
+			mapdata->rect_OK[tate][yoko].left = 0;
+			mapdata->rect_OK[tate][yoko].top = 0;
+			mapdata->rect_OK[tate][yoko].right = 0;
+			mapdata->rect_OK[tate][yoko].bottom = 0;
+
+			mapdata->rect_OK_First[tate][yoko] = mapdata->rect_OK[tate][yoko];
+
+
+		}
+	}
+
+	//ƒ}ƒbƒv‚ð“–‚½‚è”»’è‚Ì—Ìˆæ‚É•ÏŠ·
+	int cnt;
+	for (int tate = 0; tate < GAME_MAP_TATE; tate++)
+	{
+		for (int yoko = 0; yoko < GAME_MAP_YOKO; yoko++)
+		{
+			for (cnt = 0; cnt < GAME_MAP_NG_KIND; cnt++)	//’Ês‚Å‚«‚È‚¢ƒ}ƒbƒv
+			{
+				if (mapdata->data[tate][yoko] == mapdata->mapNGKind[cnt])
+				{
+					mapdata->rect_NG[tate][yoko].left = yoko * GAME_MAP_YOKO_SIZE + 1;
+					mapdata->rect_NG[tate][yoko].top = tate * GAME_MAP_TATE_SIZE + 1;
+					mapdata->rect_NG[tate][yoko].right = (yoko + 1) * GAME_MAP_YOKO_SIZE - 1;
+					mapdata->rect_NG[tate][yoko].bottom = (tate + 1) * GAME_MAP_TATE_SIZE - 1;
+
+					mapdata->rect_NG_First[tate][yoko] = mapdata->rect_NG[tate][yoko];	//‰ŠúˆÊ’u‚ðÝ’è‚·‚é
+				}
+			}
+
+
+			for (cnt = 0; cnt < GAME_MAP_OK_KIND; cnt++)		//’Ês‚Å‚«‚éƒ}ƒbƒv
+			{
+				if (mapdata->data[tate][yoko] == mapdata->mapOKKind[cnt])
+				{
+					mapdata->rect_OK[tate][yoko].left = yoko * GAME_MAP_YOKO_SIZE + 1;
+					mapdata->rect_OK[tate][yoko].top = tate * GAME_MAP_TATE_SIZE + 1;
+					mapdata->rect_OK[tate][yoko].right = (yoko + 1) * GAME_MAP_YOKO_SIZE - 1;
+					mapdata->rect_OK[tate][yoko].bottom = (tate + 1) * GAME_MAP_TATE_SIZE - 1;
+
+					mapdata->rect_OK_First[tate][yoko] = mapdata->rect_OK[tate][yoko];
+				}
+			}
+
+			for (cnt = 0; cnt < GAME_MAP_ITEM_KIND; cnt++)		//’Ês‚Å‚«‚éƒ}ƒbƒv
+			{
+				if (mapdata->data[tate][yoko] == MapItemKind[cnt])
+				{
+					mapdata->rectMap_Item[tate][yoko].left = yoko * GAME_MAP_YOKO_SIZE + 1;
+					mapdata->rectMap_Item[tate][yoko].top = tate * GAME_MAP_TATE_SIZE + 1;
+					mapdata->rectMap_Item[tate][yoko].right = (yoko + 1) * GAME_MAP_YOKO_SIZE - 1;
+					mapdata->rectMap_Item[tate][yoko].bottom = (tate + 1) * GAME_MAP_TATE_SIZE - 1;
+
+					mapdata->rectMap_Item_First[tate][yoko] = mapdata->rectMap_Item[tate][yoko];
+				}
+			}
+
+			for (cnt = 0; cnt < GAME_MAP_KAIDAN; cnt++)		//’Ês‚Å‚«‚éƒ}ƒbƒv
+			{
+				if (mapdata->data[tate][yoko] == MapKaidanKind[cnt])
+				{
+					mapdata->rectMap_Kaidan[tate][yoko].left = yoko * GAME_MAP_YOKO_SIZE + 1;
+					mapdata->rectMap_Kaidan[tate][yoko].top = tate * GAME_MAP_TATE_SIZE + 1;
+					mapdata->rectMap_Kaidan[tate][yoko].right = (yoko + 1) * GAME_MAP_YOKO_SIZE - 1;
+					mapdata->rectMap_Kaidan[tate][yoko].bottom = (tate + 1) * GAME_MAP_TATE_SIZE - 1;
+
+					mapdata->rectMap_Kaidan_First[tate][yoko] = mapdata->rectMap_Kaidan[tate][yoko];
+				}
+			}
+		}
+	}
 
 	return TRUE;
 }
-
-
-
 
 
 //########## ƒ}ƒbƒv‚ð•\Ž¦‚·‚éŠÖ” ##########
@@ -1314,13 +1832,50 @@ VOID MY_PLAY_MAP_DRAW(MAP MapImage)
 					tate * GAME_MAP_TATE_SIZE - ScrollCntTate,
 					MapImage.Handle[MapImage.data[tate][yoko]], TRUE);	//ƒ}ƒbƒv‚ðƒXƒNƒ[ƒ‹‚µ‚È‚ª‚ç•`‰æ
 
-
 			}
 		}
 	}
 }
 
+//########## ƒ}ƒbƒv‚Ì“–‚½‚è”»’è‚ð•`‰æ‚·‚éŠÖ” ##########
+VOID MY_PLAY_MAP_DRAW_ATARI(MAP *map_naka)
+{
+	//ƒXƒNƒ[ƒ‹‚·‚éƒ}ƒbƒv‚ð•`‰æ
+	for (int tate = 0; tate < GAME_MAP_TATE; tate++)
+	{
+		for (int yoko = 0; yoko < GAME_MAP_YOKO; yoko++)
+		{
+			if ((yoko + 1) * GAME_MAP_YOKO_SIZE - ScrollCntYoko >= 0 &&
+				(yoko + 0) * GAME_MAP_YOKO_SIZE - ScrollCntYoko <= GAME_WIDTH &&
+				(tate + 1) * GAME_MAP_TATE_SIZE - ScrollCntTate >= 0 &&
+				(tate + 0) * GAME_MAP_TATE_SIZE - ScrollCntTate <= GAME_HEIGHT
+				)	//‰æ–Ê‚ÉŽÊ‚Á‚Ä‚¢‚é‚È‚ç‚Î
 
+
+				map_naka->rect_OK[tate][yoko].left = map_naka->rect_OK_First[tate][yoko].left - ScrollCntYoko;
+			map_naka->rect_OK[tate][yoko].right = map_naka->rect_OK_First[tate][yoko].right - ScrollCntYoko;
+			map_naka->rect_OK[tate][yoko].top = map_naka->rect_OK_First[tate][yoko].top - ScrollCntTate;
+			map_naka->rect_OK[tate][yoko].bottom = map_naka->rect_OK_First[tate][yoko].bottom - ScrollCntTate;
+
+			map_naka->rect_NG[tate][yoko].left = map_naka->rect_NG_First[tate][yoko].left - ScrollCntYoko;
+			map_naka->rect_NG[tate][yoko].right = map_naka->rect_NG_First[tate][yoko].right - ScrollCntYoko;
+			map_naka->rect_NG[tate][yoko].top = map_naka->rect_NG_First[tate][yoko].top - ScrollCntTate;
+			map_naka->rect_NG[tate][yoko].bottom = map_naka->rect_NG_First[tate][yoko].bottom - ScrollCntTate;
+
+			map_naka->rectMap_Item[tate][yoko].left = map_naka->rectMap_Item_First[tate][yoko].left - ScrollCntYoko;
+			map_naka->rectMap_Item[tate][yoko].right = map_naka->rectMap_Item_First[tate][yoko].right - ScrollCntYoko;
+			map_naka->rectMap_Item[tate][yoko].top = map_naka->rectMap_Item_First[tate][yoko].top - ScrollCntTate;
+			map_naka->rectMap_Item[tate][yoko].bottom = map_naka->rectMap_Item_First[tate][yoko].bottom - ScrollCntTate;
+
+			map_naka->rectMap_Kaidan[tate][yoko].left = map_naka->rectMap_Kaidan_First[tate][yoko].left - ScrollCntYoko;
+			map_naka->rectMap_Kaidan[tate][yoko].right = map_naka->rectMap_Kaidan_First[tate][yoko].right - ScrollCntYoko;
+			map_naka->rectMap_Kaidan[tate][yoko].top = map_naka->rectMap_Kaidan_First[tate][yoko].top - ScrollCntTate;
+			map_naka->rectMap_Kaidan[tate][yoko].bottom = map_naka->rectMap_Kaidan_First[tate][yoko].bottom - ScrollCntTate;
+
+
+		}
+	}
+}
 
 //######### ƒvƒŒƒCƒ„[‚ð•\Ž¦‚·‚éŠÖ” ###########
 VOID MY_PLAY_PLAYER_DRAW(CHARADATA player)
@@ -1418,6 +1973,364 @@ VOID MY_PLAY_PLAYER_DRAW(CHARADATA player)
 	return;
 }
 
+//########## “G‚ð•\Ž¦‚·‚é(Ú×)ŠÖ” ##########
+//ˆø@”@FBOSS * F“G‚Ìæ“ªƒAƒhƒŒƒX(ƒ|ƒCƒ“ƒ^)
+//ˆø@”@Fint		F“G‚Ì”
+//–ß‚è’l@F‚È‚µ
+VOID MY_PLAY_ENEMY_DRAW_DETAIL(BOSS *boss)
+{
+		
+			//ƒvƒŒƒCƒ„[‚ð•`‰æ	
+			DrawGraph(
+				boss->X,
+				boss->Y,
+				boss->Handle[boss->NowHandleNum], TRUE);
+
+				//‰æ‘œ‚ðƒAƒjƒ[ƒVƒ‡ƒ“‚³‚¹‚é
+				switch (boss -> muki)
+				{
+				case GAME_BOSS_FIRST_MUKI_U:
+
+					if (boss ->NowHandleNum >= GAME_BOSS_FIRST_MUKI_U
+						&& boss->NowHandleNum < GAME_BOSS_FIRST_MUKI_U + 2)
+					{
+						boss->NowHandleNum++;	//ŽŸ‚Ì‰æ‘œ
+					}
+					else
+					{
+						boss->NowHandleNum = GAME_BOSS_FIRST_MUKI_U;	//Å‰‚Ì‰æ‘œ
+					}
+
+					break;
+
+				case GAME_BOSS_FIRST_MUKI_R:
+
+					if (boss->NowHandleNum >= GAME_BOSS_FIRST_MUKI_R
+						&& boss->NowHandleNum < GAME_BOSS_FIRST_MUKI_R + 2)
+					{
+						boss->NowHandleNum++;	//ŽŸ‚Ì‰æ‘œ
+					}
+					else
+					{
+						boss->NowHandleNum = GAME_BOSS_FIRST_MUKI_R;	//Å‰‚Ì‰æ‘œ
+					}
+
+					break;
+
+				case GAME_BOSS_FIRST_MUKI_D:
+
+					if (boss->NowHandleNum >= GAME_BOSS_FIRST_MUKI_D
+						&& boss->NowHandleNum < GAME_BOSS_FIRST_MUKI_D + 2)
+					{
+						boss->NowHandleNum++;	//ŽŸ‚Ì‰æ‘œ
+					}
+					else
+					{
+						boss->NowHandleNum = GAME_BOSS_FIRST_MUKI_D;
+					}
+
+					break;
+
+				case GAME_BOSS_FIRST_MUKI_L:
+
+					if (boss->NowHandleNum >= GAME_BOSS_FIRST_MUKI_L
+						&& boss->NowHandleNum < GAME_BOSS_FIRST_MUKI_L + 2)
+					{
+						boss->NowHandleNum++;	//ŽŸ‚Ì‰æ‘œ
+					}
+					else
+					{
+						boss->NowHandleNum = GAME_BOSS_FIRST_MUKI_L;
+					}
+
+					break;
+
+				default:
+					break;
+				}
+
+	return;
+}
+
+//########## “G‚ð•\Ž¦‚·‚éŠÖ” ##########
+VOID MY_PLAY_ENEMY_DRAW(BOSS boss)
+{
+	MY_PLAY_ENEMY_DRAW_DETAIL(&boss);
+
+	return;
+}
+
+//########## “G‚ð‘€ì‚·‚é(Ú×)ŠÖ” ##########
+//ˆø@”@FBOSS * F“G‚Ìæ“ªƒAƒhƒŒƒX(ƒ|ƒCƒ“ƒ^)
+//ˆø@”@Fint		F“G‚Ì”
+//–ß‚è’l@F‚È‚µ
+VOID MY_PLAY_ENEMY_OPERATION_DETAIL(BOSS *boss)
+{
+
+	
+		//if ( boss ->IsAlive == FALSE)
+		//{
+		//	continue;	//“G‚ª¶‚«‚Ä‚È‚¯‚ê‚ÎAŽŸ‚Ì“G‚Ìˆ—‚ð‚·‚é
+		//}
+
+		if (Myplayer.MoveDistX == boss->viewStartPointX && Myplayer.MoveDistY==boss->viewStartPointY)	//ƒvƒŒƒCƒ„[‚Ì“®‚¢‚½‹——£‚ðŽg‚Á‚ÄA“G‚ð•\Ž¦‚·‚é
+		{
+			if (boss->IsView == FALSE)
+			{
+				boss->X = boss->SetFirstX;		//XˆÊ’u‚ðÝ’è‚µ’¼‚·
+				boss->Y = boss->SetFirstY;		//YˆÊ’u‚ðÝ’è‚µ’¼‚·
+				boss->muki = boss->SetFirstmuki;	//Œü‚«‚ðÝ’è‚µ’¼‚·
+				
+
+				boss->IsView = TRUE;				//“G‚ð•\Ž¦‚·‚é
+			}
+		}
+
+		if (boss->IsView == TRUE)	//“G‚ª•\Ž¦‚Å‚«‚é‚Æ‚«‚ÍEEE
+		{
+			switch (boss->muki)
+			{
+			case GAME_BOSS_FIRST_MUKI_U:
+
+				boss->Y -= boss->Speed;
+				break;
+
+			case GAME_BOSS_FIRST_MUKI_R:
+
+				if (boss->CanMoveRight == TRUE)	//‰E‚É“®‚¯‚é‚Æ‚«‚ÍEEE
+				{
+					
+					boss->X += boss->Speed;
+				}
+				else
+				{
+					boss->muki = GAME_BOSS_FIRST_MUKI_L;	//Œü‚«‚ð”½“]‚³‚¹‚é
+				}
+				break;
+
+			case GAME_BOSS_FIRST_MUKI_D:
+
+				boss->Y += boss->Speed;
+				break;
+
+			case GAME_BOSS_FIRST_MUKI_L:
+
+				if (boss->CanMoveLeft == TRUE)	//¶‚É“®‚¯‚é‚Æ‚«‚ÍEEE
+				{
+						boss->X -= boss->Speed;
+				}
+				else
+				{
+					boss->muki = GAME_BOSS_FIRST_MUKI_R;	//Œü‚«‚ð”½“]‚³‚¹‚é
+				}
+				break;
+
+			default:
+				break;
+			}
+
+			MY_PLAY_ENEMY_MAP_COLLISION(boss);	//“G‚Æƒ}ƒbƒv‚Æ‚ÌÚGŠÖ”
+
+		}
+
+	return;
+}
+
+//########## “G‚ð‘€ì‚·‚éŠÖ” ##########
+VOID MY_PLAY_ENEMY_OPERATION(VOID)
+{
+	MY_PLAY_ENEMY_OPERATION_DETAIL(&boss[0]);	//boss‚Ìæ“ªƒAƒhƒŒƒX‚ð“ü‚ê‚é
+
+	return;
+}
+
+//########## “G‚Æƒ}ƒbƒv‚Æ‚ÌÚGŠÖ” ##########
+VOID MY_PLAY_ENEMY_MAP_COLLISION(BOSS *e)
+{
+	MY_SET_ENEMY_ATARI(e);
+
+	//¶•ûŒü‚ÉA‚Ü‚¾“®‚¯‚é
+	(e)->CanMoveLeft = TRUE;
+
+	MY_SET_ENEMY_ATARI(e);			//“G‚Ì“–‚½‚è”»’è‚Ì—Ìˆæ‚ðÝ’è
+	e->atariRect.left -= 4;			//­‚µA“G‚Ì“–‚½‚è”»’è‚Ì—Ìˆæ‚ð¶‚É‚¸‚ç‚·
+	e->atariRect.right -= 4;		//­‚µA“G‚Ì“–‚½‚è”»’è‚Ì—Ìˆæ‚ð¶‚É‚¸‚ç‚·
+
+	static int x = 0, y = 0;
+
+	if (MY_CHECK_RECT_ATARI_CHARA_MAP_ATARIBASHO(e->atariRect, MapImage_A[MapNowPos].rect_NG, &x, &y) == TRUE)	//¶‚És‚¯‚È‚¢ƒ‚ƒm‚Æ“–‚½‚Á‚½‚Æ‚«
+	{
+		e->CanMoveLeft = FALSE;	//¶‚És‚¯‚È‚¢
+	}
+
+	//‰E•ûŒü‚ÉA‚Ü‚¾“®‚¯‚é
+	(e)->CanMoveRight = TRUE;
+
+	MY_SET_ENEMY_ATARI(e);			//“G‚Ì“–‚½‚è”»’è‚Ì—Ìˆæ‚ðÝ’è
+	e->atariRect.left += 4;			//­‚µA“G‚Ì“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‰E‚É‚¸‚ç‚·
+	e->atariRect.right += 4;		//­‚µA“G‚Ì“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‰E‚É‚¸‚ç‚·
+
+	if (MY_CHECK_RECT_ATARI_CHARA_MAP_ATARIBASHO(e->atariRect, MapImage_A[MapNowPos].rect_NG, &x, &y) == TRUE)	//‰E‚És‚¯‚È‚¢ƒ‚ƒm‚Æ“–‚½‚Á‚½‚Æ‚«
+	{
+		e->CanMoveRight = FALSE;	//‰E‚És‚¯‚È‚¢
+	}
+
+	//if ((e)->IsFlying == TRUE)
+	//{
+	//	return;	//”òs‚Å‚«‚é“G‚Í‚±‚±‚Åˆ—I—¹(ƒWƒƒƒ“ƒv‚ð‚µ‚È‚¢‚½‚ß)
+	//}
+
+	//if ((e)->IsJumpNow == TRUE)		//ƒWƒƒƒ“ƒv‚µ‚Ä‚¢‚é‚Æ‚«
+	//{
+	//	(e)->JumpNowTime = GetNowCount();	//Œ»Ý‚ÌŽž‚ðŽæ“¾
+	//	double KeikaTime = ((e)->JumpNowTime - (e)->JumpStartTime) / 1000.0;	//ƒWƒƒƒ“ƒv‚ð‚µ‚½‚Æ‚«‚©‚ç‚ÌŒo‰ßŽžŠÔ‚ðŽæ“¾
+
+	//	double ConstAcceleMoveCalc =
+	//		(
+	//		(
+	//			sqrt(2.0 * (e)->Weight * (e)->JumpValue)
+	//			* KeikaTime
+	//			- 0.5	// 1/2 
+	//			* (e)->Weight * pow(KeikaTime, 2)
+	//			)
+	//			);
+
+	//	//“G‚ÌˆÊ’u‚ð•ÏX
+	//	(e)->Y = (e)->JumpPrevY - ConstAcceleMoveCalc;
+	//}
+
+	//if ((e)->IsJumpNow == TRUE && (e)->IsJumpTop == TRUE)	//’¸“_‚É“ž’B‚µ‚½‚çA‚ ‚Æ‚Í—Ž‚¿‚é‚Ì‚Ý
+	//{
+	//	MY_SET_ENEMY_ATARI(e);	//“G‚Ì“–‚½‚è”»’è‚Ì—Ìˆæ‚ðÝ’è
+	//	if (MY_CHECK_RECT_ATARI_CHARA_MAP((e)->atariRect, rectMap_DownNG) == TRUE)	//‰º‚És‚¯‚È‚¢ƒ‚ƒm‚Æ“–‚½‚Á‚½‚Æ‚«
+	//	{
+	//		if ((e)->Y >= 0 && (e)->Y <= GAME_HEIGHT)	//“G‚ª‰æ–Ê“à‚É‚¢‚é‚Æ‚«
+	//		{
+	//			int PullUpPlayer = (e)->Y / GAME_MAP_TATE_SIZE;	//ˆø‚«ã‚°‚é‚×‚«”’l‚Ü‚Åˆø‚«ã‚°‚é
+	//			while ((e)->Y > PullUpPlayer * GAME_MAP_TATE_SIZE)
+	//			{
+	//				(e)->Y--;
+	//			}
+	//		}
+
+	//		//ƒWƒƒƒ“ƒvI—¹
+	//		(e)->IsJumpNow = FALSE;
+	//		(e)->IsJumpTop = FALSE;
+	//	}
+	//}
+
+	//if ((e)->IsJumpNow == FALSE)
+	//{
+	//	MY_SET_ENEMY_ATARI(e);			//“G‚Ì“–‚½‚è”»’è‚Ì—Ìˆæ‚ðÝ’è
+	//	(e)->atariRect.top += 4;		//­‚µA“G‚Ì“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‰º‚É‚¸‚ç‚·
+	//	(e)->atariRect.bottom += 4;		//­‚µA“G‚Ì“–‚½‚è”»’è‚Ì—Ìˆæ‚ð‰º‚É‚¸‚ç‚·
+
+	//	if (MY_CHECK_RECT_ATARI_CHARA_MAP((e)->atariRect, rectMap_DownNG) == FALSE)	//‰º‚És‚¯‚È‚¢ƒ‚ƒm‚Æ“–‚½‚Á‚Ä‚¢‚È‚¢‚Æ‚«
+	//	{
+	//		MY_PLAY_ENEMY_JUMP_PREV(e);	//ƒWƒƒƒ“ƒv‚Ì€”õ
+	//		(e)->JumpValue = 0;			//ƒWƒƒƒ“ƒv—Ê‚ð0‚É‚µ‚ÄA—Ž‚¿‚é‚Ì‚Ý‚É‚·‚é
+	//		(e)->IsJumpNow = TRUE;		//ƒWƒƒƒ“ƒvÏ‚Ý‚É‚·‚é
+	//		(e)->IsJumpTop = TRUE;		//’¸“_‚Ü‚Ås‚Á‚ÄA‚ ‚Æ‚Í—Ž‚¿‚é‚Ì‚Ý
+	//	}
+	//}
+
+	return;
+}
+
+//######### ƒAƒCƒeƒ€‚ðŽæ“¾‚·‚éŠÖ” ###############
+VOID MY_PLAY_PLAYER_GETITEM(VOID)
+{
+	MY_SET_PLAYER_ATARI(&Myplayer);
+
+	int atariX;
+	int atariY;
+
+
+	if (MY_CHECK_RECT_ATARI_CHARA_MAP_ATARIBASHO(Myplayer.atariRect, ItemImage_1[GAME_MAP_SCENE_F1].rectMap_Item, &atariX, &atariY) == TRUE)
+	{
+		Myplayer.item[ItemImage_1[GAME_MAP_SCENE_F1].data[atariY][atariX]] ++;
+
+		ItemImage_1[GAME_MAP_SCENE_F1].data[atariY][atariX] = (int)M_B;
+
+		ItemImage_1[GAME_MAP_SCENE_F1].rectMap_Item[atariY][atariX].left = 0;
+		ItemImage_1[GAME_MAP_SCENE_F1].rectMap_Item[atariY][atariX].top = 0;
+		ItemImage_1[GAME_MAP_SCENE_F1].rectMap_Item[atariY][atariX].right = 0;
+		ItemImage_1[GAME_MAP_SCENE_F1].rectMap_Item[atariY][atariX].bottom = 0;
+	}
+	return;
+}
+
+//############# ƒ}ƒbƒv‚ð‚ðØ‚è‘Ö‚¦‚éŠÖ” ###############
+VOID MY_MAP_SCENE_MOVE(VOID)
+{
+	MY_SET_PLAYER_ATARI(&Myplayer);
+
+	int atariX;
+	int atariY;
+
+	if (MY_CHECK_RECT_ATARI_CHARA_MAP_ATARIBASHO(Myplayer.atariRect, MapImage_A[MapNowPos].rectMap_Kaidan, &atariX, &atariY))
+	{
+		MapNowPos++;
+
+		switch (MapNowPos)
+		{
+		case GAME_MAP_SCENE_F1:
+
+
+			break;
+		case GAME_MAP_SCENE_F2:
+
+			break;
+
+		case GAME_MAP_SCENE_F3:
+
+			break;
+
+		case GAME_MAP_SCENE_F4:
+
+			break;
+		case GAME_MAP_SCENE_BOSS:
+			Myplayer.X = 400;
+			Myplayer.Y = 500;
+			ScrollCntTate = 400;
+			ScrollCntYoko = 400;
+
+			StopSoundMem(MUSIC_MY_BGM_1.Handle);
+
+
+			//MY_PLAY_ENEMY_DRAW();		//“G‚ð•`‰æ
+
+			//BGM‚ª—¬‚ê‚Ä‚¢‚È‚¢‚Æ‚«
+			if (CheckSoundMem(MUSIC_MY_BOSS.Handle) == 0)
+			{
+				WaitTimer(5000);  //5•b‘Ò‚Â
+				ChangeVolumeSoundMem(255 * 50 / 100, MUSIC_MY_BOSS.Handle);	//BGM‚Ì‰¹—Ê‚ð50“‚É‚·‚é
+				PlaySoundMem(MUSIC_MY_BOSS.Handle, DX_PLAYTYPE_LOOP);			//BGM‚ð—¬‚·
+			}
+
+			break;
+		default:
+			break;
+		}
+
+	}
+
+	return;
+}
+
+//########## ‰¹‚ð“Ç‚Ýž‚ÞÝ’è‚ð‚·‚éŠÖ” ##########
+//ˆø@”F‰¹\‘¢‘Ì@	:Ý’è‚·‚é‰¹\‘¢‘Ì‚Ì•Ï”
+//ˆø@”Fconst char *	:“Ç‚Ýž‚Þ‰æ‘œ‚Ìƒtƒ@ƒCƒ‹ƒpƒX
+//–ß‚è’lFBOOL			:TRUE:³í / FALSE:ˆÙí
+BOOL MY_MUSIC_LOAD(MUSIC *m, const char *path)
+{
+	//‰¹‚ð“Ç‚Ýž‚Þ
+	m->Handle = LoadSoundMem(path);
+
+	if (m->Handle == -1) { return FALSE; }
+
+	return TRUE;
+}
 
 //######### ƒEƒBƒ“ƒhƒEƒvƒƒV[ƒWƒƒŠÖ” ############
 LRESULT CALLBACK MY_WNDPROC(HWND hwnd, UINT mgs, WPARAM wp, LPARAM lp)
