@@ -1,4 +1,3 @@
-
 #include "DxLib.h"
 
 
@@ -156,7 +155,7 @@ enum GAME_SCENE {
 	GAME_SCENE_PLAY,	//ÉvÉåÉCâÊñ 
 	GAME_SCENE_GAMEOVER,	//GameOverâÊñ 
 //    GAME_SCENE_MOVE_SCENE,	//ÉVÅ[ÉìëJà⁄âÊñ 
-    GAME_SCENE_CLEAR    //ÉNÉäÉAâÊñ 
+GAME_SCENE_CLEAR    //ÉNÉäÉAâÊñ 
 };
 
 enum GAME_MAP_SCENE
@@ -331,7 +330,7 @@ struct STRUCT_BOSS
 	int SetFirstX;						//ìGÇÃç≈èâÇÃXà íu
 	int SetFirstY;						//ìGÇÃç≈èâÇÃYà íu
 	int SetFirstmuki;					//ìGÇÃç≈èâÇÃå¸Ç´
-	
+
 	int atariX;							//ìñÇΩÇËîªíËÇÃXà íu
 	int atariY;							//ìñÇΩÇËîªíËÇÃYà íu
 	int atariWidth;						//ìñÇΩÇËîªíËÇÃïù
@@ -398,7 +397,7 @@ MAP MapDataKind[5];
 CHARAIMAGE CharaImage;		//ÉLÉÉÉâÇÃâÊëú
 CHARADATA  Myplayer;		//ÉLÉÉÉâÇÃÉfÅ[É^
 
-CHARAIMAGE Bossimage;             //É{ÉXÇÃâÊëú
+CHARAIMAGE BossImage;             //É{ÉXÇÃâÊëú
 BOSS  oni;							//É{ÉXÇÃÉfÅ[É^
 
 //ÉAÉCÉeÉÄån
@@ -412,6 +411,7 @@ bool itemdrowflag = false;
 
 //ÉvÉåÉCÉÑÅ[ÇÃÉCÉÅÅ[ÉWâÊëúÇÃî‘çÜÇê›íËÇ∑ÇÈ
 int PlayerImageNum[GAME_CHARA_MOTION_NUM];
+int BossImageNum[GAME_ENE_BOSS_MOTION_NUM];
 
 int ScrollCntYoko = 0;	//ÉXÉNÉçÅ[ÉãÉJÉEÉìÉ^(â°)
 int ScrollDistPlusYoko = 1;  //ÉXÉNÉçÅ[ÉãÇ∑ÇÈãóó£(â°)
@@ -473,14 +473,14 @@ VOID MY_SET_PLAYER_ATARI(CHARADATA *);			//ÉvÉåÉCÉÑÅ[ÇÃìñÇΩÇËîªíËÇÃóÃàÊÇê›íËÇ∑Ç
 VOID MY_PLAY_ENEMY_DRAW_DETAIL(BOSS *);		//ìGÇï\é¶Ç∑ÇÈ(è⁄ç◊)ä÷êî
 VOID MY_PLAY_ENEMY_DRAW(BOSS *);						//ìGÇï\é¶Ç∑ÇÈä÷êî
 
-VOID MY_PLAY_ENEMY_OPERATION_DETAIL(BOSS *,CHARADATA *);	//ìGÇëÄçÏÇ∑ÇÈ(è⁄ç◊)ä÷êî
+VOID MY_PLAY_ENEMY_OPERATION_DETAIL(BOSS *, CHARADATA *);	//ìGÇëÄçÏÇ∑ÇÈ(è⁄ç◊)ä÷êî
 VOID MY_PLAY_ENEMY_OPERATION(VOID);					//ìGÇëÄçÏÇ∑ÇÈä÷êî
 
 VOID MY_SET_ENEMY_ATARI(BOSS *);			//ìGÇÃìñÇΩÇËîªíËÇÃóÃàÊÇê›íËÇ∑ÇÈä÷êî
 
 VOID MY_PLAY_ENEMY_MAP_COLLISION(BOSS *);  //ìGÇ∆É}ÉbÉvÇ∆ÇÃê⁄êGä÷êî
 
-BOOL MY_INIT_ENEMY(BOSS *, CHARAIMAGE, int *, int, int, int, int, int, int, int, BOOL);	//ìGÇèâä˙âªÇ∑ÇÈä÷êî
+BOOL MY_INIT_ENEMY(BOSS *, CHARAIMAGE, int *, int, int, int, int);	//ìGÇèâä˙âªÇ∑ÇÈä÷êî
 
 BOOL MY_CHECK_RECT_ATARI(RECT, RECT);		//óÃàÊÇÃìñÇΩÇËîªíËÇÇ∑ÇÈä÷êî
 BOOL MY_CHECK_RECT_ATARI_CHARA_MAP_ATARIBASHO(RECT, RECT map[GAME_MAP_TATE][GAME_MAP_YOKO], int *, int *);  //ÉLÉÉÉâÉNÉ^Å[Ç∆É}ÉbÉvÇÃìñÇΩÇËîªíËÇÇ∑ÇÈä÷êî
@@ -681,7 +681,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 			break;  //ÉQÅ[ÉÄÉIÅ[ÉoÅ[âÊñ ÇÃèàóùÇ±Ç±Ç‹Ç≈
 
-        case (int)GAME_SCENE_CLEAR:	//ÉGÉìÉhâÊñ ÇÃèàóùÇ±Ç±Ç©ÇÁ
+		case (int)GAME_SCENE_CLEAR:	//ÉGÉìÉhâÊñ ÇÃèàóùÇ±Ç±Ç©ÇÁ
 
 			MY_GAME_CLEAR();	//ÉGÉìÉhâÊñ ÇÃèàóù
 
@@ -917,14 +917,14 @@ VOID MY_GAME_PLAY(VOID)
 	MY_PLAY_PLAYER_DRAW(Myplayer);  //ÉvÉåÉCÉÑÅ[Çï`âÊ
 
 	//if (MapNowPos == (int)GAME_MAP_SCENE_BOSS) {
-		MY_PLAY_ENEMY_DRAW(&oni);
+	MY_PLAY_ENEMY_DRAW(&oni);
 	//}
 
 	MY_PLAY_PLAYER_GETITEM();     //ÉAÉCÉeÉÄÇÃéÊìæ
 
 	MY_MAP_SCENE_MOVE();  //É}ÉbÉvÇêÿÇËë÷Ç¶ÇÈ
 
-	
+
 
 
 
@@ -975,7 +975,7 @@ VOID MY_GAME_GAMEOVER(VOID)
 	}
 
 
-    DrawString(400, 300, "GAME OVER(ÉoÉbÉNÉXÉyÅ[ÉXÉLÅ[->É^ÉCÉgÉãâÊñ Ç…ñﬂÇÈ)", GetColor(255, 255, 255));
+	DrawString(400, 300, "GAME OVER(ÉoÉbÉNÉXÉyÅ[ÉXÉLÅ[->É^ÉCÉgÉãâÊñ Ç…ñﬂÇÈ)", GetColor(255, 255, 255));
 
 }
 
@@ -1017,6 +1017,11 @@ BOOL MY_PLAY_INIT(VOID)
 
 	//ÉvÉåÉCÉÑÅ[Çèâä˙âª
 	if (MY_PLAYER_INIT(&Myplayer, CharaImage, &PlayerImageNum[0], GAME_MAP_YOKO_SIZE*GAME_CHARA_START_X, GAME_MAP_TATE_SIZE*GAME_CHARA_START_Y, GAME_CHARA_SPEED) == FALSE) {
+		MessageBox(NULL, "CHARA_INIT", "NotFound", MB_OK);
+		return FALSE;
+	}
+
+	if (MY_INIT_ENEMY(&oni, BossImage, &BossImageNum[0], GAME_BOSS_FIRST_MUKI_D,GAME_MAP_YOKO_SIZE * GAME_CHARA_START_X, GAME_MAP_TATE_SIZE * GAME_CHARA_START_Y, GAME_CHARA_SPEED) == FALSE) {
 		MessageBox(NULL, "CHARA_INIT", "NotFound", MB_OK);
 		return FALSE;
 	}
@@ -1105,7 +1110,7 @@ BOOL MY_PLAYER_INIT(CHARADATA *charadata, CHARAIMAGE charaimage, int *num, int x
 //à¯Å@êîÅFintÅ@	Å@Å@Å@Å@Å@ÅFà⁄ìÆÉXÉsÅ[Éh
 //à¯Å@êîÅFBOOLÅ@	Å@Å@Å@ÅFîÚçsÇ≈Ç´ÇÈÇ©
 //ñﬂÇËílÅFBOOLÅFÉGÉâÅ[éûÅFFALSE
-BOOL MY_INIT_ENEMY(BOSS *e, CHARAIMAGE c, int *num, int Muki, int x, int y, int startX, int startY, int speed, int mass, BOOL fly)
+BOOL MY_INIT_ENEMY(BOSS *e, CHARAIMAGE c, int *num, int Muki, int x, int y, int speed)
 {
 	//*(num + 0)ÇÕîzóÒÇÃêÊì™ÉAÉhÉåÉX
 
@@ -1118,7 +1123,7 @@ BOOL MY_INIT_ENEMY(BOSS *e, CHARAIMAGE c, int *num, int Muki, int x, int y, int 
 	e->Y = y;								//ìGÇÃç≈èâÇÃà íuY
 	e->SetFirstX = x;						//ìGÇÃèâä˙ï\é¶à íuX
 	e->SetFirstY = y;						//ìGÇÃèâä˙ï\é¶à íuY
-	
+
 
 	e->Width = c.Width[*(num + 0)];			//ç≈èâÇÃâÊëúÇÃâ°ïùÇê›íËÇ∑ÇÈ
 	e->Height = c.Height[*(num + 0)];		//ç≈èâÇÃâÊëúÇÃçÇÇ≥Çê›íËÇ∑ÇÈ
@@ -1148,15 +1153,16 @@ BOOL MY_INIT_ENEMY(BOSS *e, CHARAIMAGE c, int *num, int Muki, int x, int y, int 
 	e->IsView = FALSE;				//ìGÇÕï\é¶Ç≈Ç´Ç»Ç¢
 
 
-	e->atariX = 2;			//ìñÇΩÇËîªíËÇÃXà íuÇÅAÉCÉCä¥Ç∂Ç…ê›íË	Å¶âÊëúï\é¶Ç∆ìñÇΩÇËîªíËÇÃXà íuÇ™ìØÇ∂Ç∆ÇÕÅAå¿ÇÁÇ»Ç¢
-	e->atariY = 14;			//ìñÇΩÇËîªíËÇÃYà íuÇÅAÉCÉCä¥Ç∂Ç…ê›íË	Å¶âÊëúï\é¶Ç∆ìñÇΩÇËîªíËÇÃYà íuÇ™ìØÇ∂Ç∆ÇÕÅAå¿ÇÁÇ»Ç¢
-	e->atariWidth = 24;		//ìñÇΩÇËîªíËÇÃïùÅ@ÇÅAÉCÉCä¥Ç∂Ç…ê›íË	Å¶âÊëúï\é¶Ç∆ìñÇΩÇËîªíËÇÃïùÇ™ìØÇ∂Ç∆ÇÕÅAå¿ÇÁÇ»Ç¢
-	e->atariHeight = 18;	//ìñÇΩÇËîªíËÇÃçÇÇ≥ÇÅAÉCÉCä¥Ç∂Ç…ê›íË	Å¶âÊëúï\é¶Ç∆ìñÇΩÇËîªíËÇÃçÇÇ≥Ç™ìØÇ∂Ç∆ÇÕÅAå¿ÇÁÇ»Ç¢
+	e->atariX = 4;			//ìñÇΩÇËîªíËÇÃXà íuÇÅAÉCÉCä¥Ç∂Ç…ê›íË	Å¶âÊëúï\é¶Ç∆ìñÇΩÇËîªíËÇÃXà íuÇ™ìØÇ∂Ç∆ÇÕÅAå¿ÇÁÇ»Ç¢
+	e->atariY = 10;			//ìñÇΩÇËîªíËÇÃYà íuÇÅAÉCÉCä¥Ç∂Ç…ê›íË	Å¶âÊëúï\é¶Ç∆ìñÇΩÇËîªíËÇÃYà íuÇ™ìØÇ∂Ç∆ÇÕÅAå¿ÇÁÇ»Ç¢
+	e->atariWidth = 18;		//ìñÇΩÇËîªíËÇÃïùÅ@ÇÅAÉCÉCä¥Ç∂Ç…ê›íË	Å¶âÊëúï\é¶Ç∆ìñÇΩÇËîªíËÇÃïùÇ™ìØÇ∂Ç∆ÇÕÅAå¿ÇÁÇ»Ç¢
+	e->atariHeight = 24;	//ìñÇΩÇËîªíËÇÃçÇÇ≥ÇÅAÉCÉCä¥Ç∂Ç…ê›íË	Å¶âÊëúï\é¶Ç∆ìñÇΩÇËîªíËÇÃçÇÇ≥Ç™ìØÇ∂Ç∆ÇÕÅAå¿ÇÁÇ»Ç¢
 
 	MY_SET_ENEMY_ATARI(e);	//ìGÇÃìñÇΩÇËîªíËÇÃóÃàÊÇê›íËÇ∑ÇÈ
 
 	return TRUE;
 }
+
 
 //####### ÉvÉçÉçÅ[ÉOâÊëúà íuèâä˙âª ###########
 VOID MY_PG_INIT(VOID)
@@ -1962,6 +1968,13 @@ VOID MY_PLAY_PLAYER_DRAW(CHARADATA player)
 		player.Y,
 		player.Handle[player.NowHandleNum], TRUE);
 
+	DrawBox(
+	player.atariRect.left,
+	player.atariRect.top,
+	player.atariRect.right,
+	player.atariRect.bottom,
+	GetColor(0, 0, 255), FALSE);	//ògê¸ï`âÊ
+
 
 	if (AllKeyState[KEY_INPUT_LEFT] != 0)    //ç∂ñÓàÛÉLÅ[Ç™âüÇ≥ÇÍÇƒÇ¢ÇΩéû
 	{
@@ -2055,135 +2068,141 @@ VOID MY_PLAY_PLAYER_DRAW(CHARADATA player)
 //ñﬂÇËílÅ@ÅFÇ»Çµ
 VOID MY_PLAY_ENEMY_DRAW_DETAIL(BOSS *boss)
 {
-		
-			//É{ÉXÇï`âÊ	
-			//DrawGraph(
-			//	boss->bossimage.X[0],
-			//	boss->bossimage.Y[0],
-			//	(boss->muki == GAME_BOSS_FIRST_MUKI_U ? boss->bossimage.Handle[12] : (boss->muki == GAME_BOSS_FIRST_MUKI_D ? boss->bossimage.Handle[0] : (boss->muki == GAME_BOSS_FIRST_MUKI_L ? boss->bossimage.Handle[4] : boss->bossimage.Handle[8]))), TRUE);
 
-	DrawGraph(boss->bossimage.X[0], boss->bossimage.Y[0], boss->bossimage.Handle[boss->NowHandleNum],TRUE);
+	//É{ÉXÇï`âÊ	
+	//DrawGraph(
+	//	boss->bossimage.X[0],
+	//	boss->bossimage.Y[0],
+	//	(boss->muki == GAME_BOSS_FIRST_MUKI_U ? boss->bossimage.Handle[12] : (boss->muki == GAME_BOSS_FIRST_MUKI_D ? boss->bossimage.Handle[0] : (boss->muki == GAME_BOSS_FIRST_MUKI_L ? boss->bossimage.Handle[4] : boss->bossimage.Handle[8]))), TRUE);
 
-				//âÊëúÇÉAÉjÉÅÅ[ÉVÉáÉìÇ≥ÇπÇÈ
-				switch (boss -> muki)
-				{
-				case GAME_BOSS_FIRST_MUKI_U:
+	DrawGraph(boss->bossimage.X[0], boss->bossimage.Y[0], boss->bossimage.Handle[boss->NowHandleNum], TRUE);
+	DrawBox(
+	oni.atariRect.left,
+	oni.atariRect.top,
+	oni.atariRect.right,
+	oni.atariRect.bottom,
+	GetColor(0, 0, 255), FALSE);	//ògê¸ï`âÊ
 
-					//if (boss ->NowHandleNum >= GAME_BOSS_FIRST_MUKI_U
-					//	&& boss->NowHandleNum < GAME_BOSS_FIRST_MUKI_U + 4)
-					//{
-					//	boss->NowHandleNum++;	//éüÇÃâÊëú
-					//	boss->NowHandleCnt++;	//ÉJÉEÉìÉgÉAÉbÉv
-					//}
-					//else
-					//{
-					//	boss->NowHandleNum = GAME_BOSS_FIRST_MUKI_U;	//ç≈èâÇÃâÊëú
-					//}
+	//âÊëúÇÉAÉjÉÅÅ[ÉVÉáÉìÇ≥ÇπÇÈ
+	switch (boss->muki)
+	{
+	case GAME_BOSS_FIRST_MUKI_U:
 
-					if (boss->NowHandleCnt >= 0
-						&& boss->NowHandleCnt < 3)
-					{
-						boss->NowHandleNum++;	//éüÇÃâÊëú
-						boss->NowHandleCnt++;	//ÉJÉEÉìÉgÉAÉbÉv
-					}
-					else
-					{
-						boss->NowHandleNum = GAME_BOSS_FIRST_MUKI_U;	//ç≈èâÇÃâÊëú
-						boss->NowHandleCnt = 0;
-					}
+		//if (boss ->NowHandleNum >= GAME_BOSS_FIRST_MUKI_U
+		//	&& boss->NowHandleNum < GAME_BOSS_FIRST_MUKI_U + 4)
+		//{
+		//	boss->NowHandleNum++;	//éüÇÃâÊëú
+		//	boss->NowHandleCnt++;	//ÉJÉEÉìÉgÉAÉbÉv
+		//}
+		//else
+		//{
+		//	boss->NowHandleNum = GAME_BOSS_FIRST_MUKI_U;	//ç≈èâÇÃâÊëú
+		//}
 
-
-
-					break;
-
-				case GAME_BOSS_FIRST_MUKI_R:
-
-					//if (boss->NowHandleNum >= GAME_BOSS_FIRST_MUKI_R
-					//	&& boss->NowHandleNum < GAME_BOSS_FIRST_MUKI_R + 4)
-					//{
-					//	boss->NowHandleNum++;	//éüÇÃâÊëú
-					//	boss->NowHandleCnt++;	//ÉJÉEÉìÉgÉAÉbÉv
-					//}
-					//else
-					//{
-					//	boss->NowHandleNum = GAME_BOSS_FIRST_MUKI_R;	//ç≈èâÇÃâÊëú
-					//}
-
-					if (boss->NowHandleCnt >= 0
-						&& boss->NowHandleCnt < 3)
-					{
-						boss->NowHandleNum++;	//éüÇÃâÊëú
-						boss->NowHandleCnt++;	//ÉJÉEÉìÉgÉAÉbÉv
-					}
-					else
-					{
-						boss->NowHandleNum = GAME_BOSS_FIRST_MUKI_R;	//ç≈èâÇÃâÊëú
-						boss->NowHandleCnt = 0;
-					}
-
-
-					break;
-
-				case GAME_BOSS_FIRST_MUKI_D:
-
-					//if (boss->NowHandleNum >= GAME_BOSS_FIRST_MUKI_D
-					//	&& boss->NowHandleNum < GAME_BOSS_FIRST_MUKI_D + 4)
-					//{
-					//	boss->NowHandleNum++;	//éüÇÃâÊëú
-					//	boss->NowHandleCnt++;	//ÉJÉEÉìÉgÉAÉbÉv
-					//}
-					//else
-					//{
-					//	boss->NowHandleNum = GAME_BOSS_FIRST_MUKI_D;
-					//}
-
-					if (boss->NowHandleCnt >= 0
-						&& boss->NowHandleCnt < 3)
-					{
-						boss->NowHandleNum++;	//éüÇÃâÊëú
-						boss->NowHandleCnt++;	//ÉJÉEÉìÉgÉAÉbÉv
-					}
-					else
-					{
-						boss->NowHandleNum = GAME_BOSS_FIRST_MUKI_D;	//ç≈èâÇÃâÊëú
-						boss->NowHandleCnt = 0;
-					}
+		if (boss->NowHandleCnt >= 0
+			&& boss->NowHandleCnt < 3)
+		{
+			boss->NowHandleNum++;	//éüÇÃâÊëú
+			boss->NowHandleCnt++;	//ÉJÉEÉìÉgÉAÉbÉv
+		}
+		else
+		{
+			boss->NowHandleNum = GAME_BOSS_FIRST_MUKI_U;	//ç≈èâÇÃâÊëú
+			boss->NowHandleCnt = 0;
+		}
 
 
 
-					break;
+		break;
 
-				case GAME_BOSS_FIRST_MUKI_L:
+	case GAME_BOSS_FIRST_MUKI_R:
 
-					//if (boss->NowHandleNum >= GAME_BOSS_FIRST_MUKI_L
-					//	&& boss->NowHandleNum < GAME_BOSS_FIRST_MUKI_L + 4)
-					//{
-					//	boss->NowHandleNum++;	//éüÇÃâÊëú
-					//	boss->NowHandleCnt++;	//ÉJÉEÉìÉgÉAÉbÉv
-					//}
-					//else
-					//{
-					//	boss->NowHandleNum = GAME_BOSS_FIRST_MUKI_L;
-					//}
+		//if (boss->NowHandleNum >= GAME_BOSS_FIRST_MUKI_R
+		//	&& boss->NowHandleNum < GAME_BOSS_FIRST_MUKI_R + 4)
+		//{
+		//	boss->NowHandleNum++;	//éüÇÃâÊëú
+		//	boss->NowHandleCnt++;	//ÉJÉEÉìÉgÉAÉbÉv
+		//}
+		//else
+		//{
+		//	boss->NowHandleNum = GAME_BOSS_FIRST_MUKI_R;	//ç≈èâÇÃâÊëú
+		//}
 
-					if (boss->NowHandleCnt >= 0
-						&& boss->NowHandleCnt < 3)
-					{
-						boss->NowHandleNum++;	//éüÇÃâÊëú
-						boss->NowHandleCnt++;	//ÉJÉEÉìÉgÉAÉbÉv
-					}
-					else
-					{
-						boss->NowHandleNum = GAME_BOSS_FIRST_MUKI_L;	//ç≈èâÇÃâÊëú
-						boss->NowHandleCnt = 0;
-					}
+		if (boss->NowHandleCnt >= 0
+			&& boss->NowHandleCnt < 3)
+		{
+			boss->NowHandleNum++;	//éüÇÃâÊëú
+			boss->NowHandleCnt++;	//ÉJÉEÉìÉgÉAÉbÉv
+		}
+		else
+		{
+			boss->NowHandleNum = GAME_BOSS_FIRST_MUKI_R;	//ç≈èâÇÃâÊëú
+			boss->NowHandleCnt = 0;
+		}
 
 
-					break;
+		break;
 
-				default:
-					break;
-				}
+	case GAME_BOSS_FIRST_MUKI_D:
+
+		//if (boss->NowHandleNum >= GAME_BOSS_FIRST_MUKI_D
+		//	&& boss->NowHandleNum < GAME_BOSS_FIRST_MUKI_D + 4)
+		//{
+		//	boss->NowHandleNum++;	//éüÇÃâÊëú
+		//	boss->NowHandleCnt++;	//ÉJÉEÉìÉgÉAÉbÉv
+		//}
+		//else
+		//{
+		//	boss->NowHandleNum = GAME_BOSS_FIRST_MUKI_D;
+		//}
+
+		if (boss->NowHandleCnt >= 0
+			&& boss->NowHandleCnt < 3)
+		{
+			boss->NowHandleNum++;	//éüÇÃâÊëú
+			boss->NowHandleCnt++;	//ÉJÉEÉìÉgÉAÉbÉv
+		}
+		else
+		{
+			boss->NowHandleNum = GAME_BOSS_FIRST_MUKI_D;	//ç≈èâÇÃâÊëú
+			boss->NowHandleCnt = 0;
+		}
+
+
+
+		break;
+
+	case GAME_BOSS_FIRST_MUKI_L:
+
+		//if (boss->NowHandleNum >= GAME_BOSS_FIRST_MUKI_L
+		//	&& boss->NowHandleNum < GAME_BOSS_FIRST_MUKI_L + 4)
+		//{
+		//	boss->NowHandleNum++;	//éüÇÃâÊëú
+		//	boss->NowHandleCnt++;	//ÉJÉEÉìÉgÉAÉbÉv
+		//}
+		//else
+		//{
+		//	boss->NowHandleNum = GAME_BOSS_FIRST_MUKI_L;
+		//}
+
+		if (boss->NowHandleCnt >= 0
+			&& boss->NowHandleCnt < 3)
+		{
+			boss->NowHandleNum++;	//éüÇÃâÊëú
+			boss->NowHandleCnt++;	//ÉJÉEÉìÉgÉAÉbÉv
+		}
+		else
+		{
+			boss->NowHandleNum = GAME_BOSS_FIRST_MUKI_L;	//ç≈èâÇÃâÊëú
+			boss->NowHandleCnt = 0;
+		}
+
+
+		break;
+
+	default:
+		break;
+	}
 
 	return;
 }
@@ -2200,278 +2219,310 @@ VOID MY_PLAY_ENEMY_DRAW(BOSS *boss)
 //à¯Å@êîÅ@ÅFBOSS * ÅFìGÇÃêÊì™ÉAÉhÉåÉX(É|ÉCÉìÉ^)
 //à¯Å@êîÅ@ÅFint		ÅFìGÇÃêî
 //ñﬂÇËílÅ@ÅFÇ»Çµ
-VOID MY_PLAY_ENEMY_OPERATION_DETAIL(BOSS *boss,CHARADATA *c)
+VOID MY_PLAY_ENEMY_OPERATION_DETAIL(BOSS *boss, CHARADATA *c)
 {
 
-	
-		//if ( boss ->IsAlive == FALSE)
-		//{
-		//	continue;	//ìGÇ™ê∂Ç´ÇƒÇ»ÇØÇÍÇŒÅAéüÇÃìGÇÃèàóùÇÇ∑ÇÈ
-		//}
+
+	//if ( boss ->IsAlive == FALSE)
+	//{
+	//	continue;	//ìGÇ™ê∂Ç´ÇƒÇ»ÇØÇÍÇŒÅAéüÇÃìGÇÃèàóùÇÇ∑ÇÈ
+	//}
 
 
-			if (boss->IsView == FALSE)
+	if (boss->IsView == FALSE)
+	{
+		boss->X = boss->SetFirstX;		//Xà íuÇê›íËÇµíºÇ∑
+		boss->Y = boss->SetFirstY;		//Yà íuÇê›íËÇµíºÇ∑
+		//boss->muki = boss->SetFirstmuki;	//å¸Ç´Çê›íËÇµíºÇ∑
+
+
+		boss->IsView = TRUE;				//ìGÇï\é¶Ç∑ÇÈ
+	}
+
+	//boss->C_Height = 32;
+	//boss->C_Width = 32;
+
+
+	enum BOSS_MOVE_DIST
+	{
+		BOSS_MOVE_UP = 12,	//è„
+		BOSS_MOVE_DOWN = 0,	//â∫
+		BOSS_MOVE_LEFT = 4,	//ç∂
+		BOSS_MOVE_RIGHT = 8,//âE
+		BOSS_MOVE_NONE = -1	//ìÆÇ´Ç»Çµ
+	};
+
+	static int boss_move_dist = (int)BOSS_MOVE_NONE;	//ìGÇÃà⁄ìÆï˚å¸
+
+	//MY_PLAY_ENEMY_CHARA_COLLISION(boss, c); //ìGÇ∆ÉvÉåÉCÉÑÅ[Ç∆ÇÃê⁄êGä÷êî
+
+	static int x = 0, y = 0;
+
+
+		int sa_y = Myplayer.Y  - boss->bossimage.Y[0];
+		int sa_x = Myplayer.X - boss->bossimage.X[0];
+
+		unsigned int sa_y_ab = 0;
+		unsigned int sa_x_ab = 0;
+
+		if (sa_x < 0)
+		{
+			sa_x_ab = sa_x * -1;
+		}
+		else
+		{
+			sa_x_ab = sa_x;
+		}
+
+		if (sa_y < 0)
+		{
+			sa_y_ab = sa_y * -1;
+		}
+		else
+		{
+			sa_y_ab = sa_y;
+		}
+
+		if (sa_y_ab	!=0 &&sa_y_ab < sa_x_ab)					//â°ÇÃà⁄ìÆïùÇ™çLÇ¢éû
+		{
+			if (sa_y > 0)						//é©ëRêîÇÃÇ∆Ç´
 			{
-				boss->X = boss->SetFirstX;		//Xà íuÇê›íËÇµíºÇ∑
-				boss->Y = boss->SetFirstY;		//Yà íuÇê›íËÇµíºÇ∑
-				//boss->muki = boss->SetFirstmuki;	//å¸Ç´Çê›íËÇµíºÇ∑
-				
-
-				boss->IsView = TRUE;				//ìGÇï\é¶Ç∑ÇÈ
+				boss_move_dist = (int)BOSS_MOVE_DOWN;		//ìGÇÃà⁄ìÆï˚å¸ÅAâ∫
+			}
+			else								//ÇªÇ§Ç∂Ç·Ç»Ç¢Ç∆Ç´
+			{
+				boss_move_dist = (int)BOSS_MOVE_UP;		//ìGÇÃà⁄ìÆï˚å¸ÅAè„
 			}
 
-			//boss->C_Height = 32;
-			//boss->C_Width = 32;
-
-
-			enum BOSS_MOVE_DIST
+		}
+		else if (sa_y_ab == 0 && sa_y_ab < sa_x_ab)
+		{
+			if (sa_x > 0)						//é©ëRêîÇÃÇ∆Ç´
 			{
-				BOSS_MOVE_UP =12,	//è„
-				BOSS_MOVE_DOWN = 0,	//â∫
-				BOSS_MOVE_LEFT = 4,	//ç∂
-				BOSS_MOVE_RIGHT = 8,//âE
-				BOSS_MOVE_NONE = -1	//ìÆÇ´Ç»Çµ
-			};
-
-			static int boss_move_dist = (int)BOSS_MOVE_NONE;	//ìGÇÃà⁄ìÆï˚å¸
-
-			//MY_PLAY_ENEMY_CHARA_COLLISION(boss, c); //ìGÇ∆ÉvÉåÉCÉÑÅ[Ç∆ÇÃê⁄êGä÷êî
-
-			static int x = 0, y = 0;
-
-			if (MY_CHECK_RECT_ATARI_PLAYER_BOSS_ATARIBASHO(boss->atariRect, c->atariRect, &x, &y) == FALSE)	//ÉvÉåÉCÉÑÅ[Ç∆É{ÉXÇ™ìñÇΩÇ¡ÇƒÇ¢Ç»Ç¢Ç∆Ç´
+				boss_move_dist = (int)BOSS_MOVE_RIGHT;	//ìGÇÃà⁄ìÆï˚å¸ÅAâE
+			}
+			else								//ÇªÇ§Ç∂Ç·Ç»Ç¢Ç∆Ç´
 			{
-
-				int sa_y = (Myplayer.Y + Myplayer.C_Height) - (boss->bossimage.Y[0] + boss->bossimage.C_Height[0]);
-				int sa_x = (Myplayer.X + Myplayer.C_Width) - (boss->bossimage.X[0] + boss->bossimage.C_Width[0]);
-
-				unsigned int sa_y_ab =0;
-				unsigned int sa_x_ab = 0;
-
-				if (sa_x < 0)
-				{
-					sa_x_ab = sa_x * -1;
-				}
-				else
-				{
-					sa_x_ab = sa_x;
-				}
-				if (sa_y < 0)
-				{
-					sa_y_ab = sa_y * -1;
-				}
-				else
-				{
-					sa_y_ab = sa_y;
-				}
-
-
-				if (sa_y_ab < sa_x_ab)					//â°ÇÃà⁄ìÆïùÇ™çLÇ¢éû
-				{
-					if (sa_x > 0)						//é©ëRêîÇÃÇ∆Ç´
-					{
-						boss_move_dist = (int)BOSS_MOVE_RIGHT;	//ìGÇÃà⁄ìÆï˚å¸ÅAâE
-					}
-					else								//ÇªÇ§Ç∂Ç·Ç»Ç¢Ç∆Ç´
-					{
-						boss_move_dist = (int)BOSS_MOVE_LEFT;	//ìGÇÃà⁄ìÆï˚å¸ÅAç∂
-					}
-				}
-				else if (sa_y_ab > sa_x_ab)								//ècÇÃà⁄ìÆïùÇ™çLÇ¢éû
-				{
-					if (sa_y > 0)						//é©ëRêîÇÃÇ∆Ç´
-					{
-						boss_move_dist = (int)BOSS_MOVE_DOWN;		//ìGÇÃà⁄ìÆï˚å¸ÅAâ∫
-					}
-					else								//ÇªÇ§Ç∂Ç·Ç»Ç¢Ç∆Ç´
-					{
-						boss_move_dist = (int)BOSS_MOVE_UP;		//ìGÇÃà⁄ìÆï˚å¸ÅAè„
-					}
-				}
-				//else if (sa_y == sa_x)				//àÍèèÇÃÇ∆Ç´
-				//{
-				//	boss_move_dist = (int)BOSS_MOVE_NONE;		//à⁄ìÆÇ»Çµ
-				//}
-
+				boss_move_dist = (int)BOSS_MOVE_LEFT;	//ìGÇÃà⁄ìÆï˚å¸ÅAç∂
 			}
 
+		}
 
-
-
-			switch (boss_move_dist)		//ìGÇÃà⁄ìÆï˚å¸Ç≤Ç∆Ç…èàóùÇï™ÇØÇÈ
+		if (sa_x_ab !=0 &&sa_y_ab > sa_x_ab)								//ècÇÃà⁄ìÆïùÇ™çLÇ¢éû
+		{
+			if (sa_x > 0)						//é©ëRêîÇÃÇ∆Ç´
 			{
-
-			case (int)BOSS_MOVE_UP:		//è„ÇÃÇ∆Ç´Ç±Ç±Ç©ÇÁ
-
-				
-				boss->bossimage.Y[0] -= boss->Speed;
-				boss->muki = boss_move_dist;
-				//boss->NowHandleNum = boss_move_dist + boss->NowHandleCnt;
-
-				break;					//è„ÇÃÇ∆Ç´Ç±Ç±Ç‹Ç≈
-
-			case (int)BOSS_MOVE_DOWN:		//â∫ÇÃÇ∆Ç´Ç±Ç±Ç©ÇÁ
-
-				boss->bossimage.Y[0] += boss->Speed;
-				boss->muki = boss_move_dist;
-				//boss->NowHandleNum = boss_move_dist + boss->NowHandleCnt;
-
-				break;					//â∫ÇÃÇ∆Ç´Ç±Ç±Ç‹Ç≈
-
-			case (int)BOSS_MOVE_LEFT:		//ç∂ÇÃÇ∆Ç´Ç±Ç±Ç©ÇÁ
-
-				boss->muki = boss_move_dist;
-				//boss->NowHandleNum = boss_move_dist + boss->NowHandleCnt;
-
-				if (boss->CanMoveLeft == TRUE)	//ç∂Ç…ìÆÇØÇÈÇ∆Ç´ÇÕÅEÅEÅE
-				{
-					boss->bossimage.X[0] -= boss->Speed;
-				}
-
-				break;					//ç∂ÇÃÇ∆Ç´Ç±Ç±Ç‹Ç≈
-
-			case (int)BOSS_MOVE_RIGHT:		//âEÇÃÇ∆Ç´Ç±Ç±Ç©ÇÁ
-
-				boss->muki = boss_move_dist;
-				//boss->NowHandleNum = boss_move_dist + boss->NowHandleCnt;
-
-				if (boss->CanMoveRight == TRUE)	//âEÇ…ìÆÇØÇÈÇ∆Ç´ÇÕÅEÅEÅE
-				{
-					boss->bossimage.X[0] += boss->Speed;
-				}
-
-				break;					//âEÇÃÇ∆Ç´Ç±Ç±Ç‹Ç≈
-
-			case (int)BOSS_MOVE_NONE:	//à⁄ìÆÇ»ÇµÇÃÇ∆Ç´
-
-				boss->muki = GAME_BOSS_FIRST_MUKI_D;	//â∫å¸Ç´
-
-				break;					//à⁄ìÆÇ»ÇµÇÃÇ∆Ç´
-
-
-			default:
-				break;
+				boss_move_dist = (int)BOSS_MOVE_RIGHT;	//ìGÇÃà⁄ìÆï˚å¸ÅAâE
+			}
+			else								//ÇªÇ§Ç∂Ç·Ç»Ç¢Ç∆Ç´
+			{
+				boss_move_dist = (int)BOSS_MOVE_LEFT;	//ìGÇÃà⁄ìÆï˚å¸ÅAç∂
 			}
 
+		}
+		else if (sa_x_ab == 0 && sa_y_ab > sa_x_ab)
+		{
+			if (sa_y > 0)						//é©ëRêîÇÃÇ∆Ç´
+			{
+				boss_move_dist = (int)BOSS_MOVE_DOWN;		//ìGÇÃà⁄ìÆï˚å¸ÅAâ∫
+			}
+			else								//ÇªÇ§Ç∂Ç·Ç»Ç¢Ç∆Ç´
+			{
+				boss_move_dist = (int)BOSS_MOVE_UP;		//ìGÇÃà⁄ìÆï˚å¸ÅAè„
+			}
 
-			MY_PLAY_ENEMY_MAP_COLLISION(boss);	//ìGÇ∆É}ÉbÉvÇ∆ÇÃê⁄êGä÷êî
+		}
+
+		if (boss->bossimage.Y[0] == Myplayer.Y&&boss->bossimage.X[0] == Myplayer.X)
+		{
+			boss_move_dist = (int)BOSS_MOVE_NONE;	//à⁄ìÆï˚å¸Ç»Çµ
+		}
+	//else
+	//{
+	//	int GameSceneNow = (int)GAME_SCENE_GAMEOVER;
+	//}
 
 
-			//if (((Myplayer.Y + Myplayer.C_Height) - (boss->bossimage.Y[0] + boss->C_Height) < 0 ? ((Myplayer.Y + Myplayer.C_Height) - (boss->bossimage.Y[0] + boss->C_Height))*-1 : (Myplayer.Y + Myplayer.C_Height) - (boss->bossimage.Y[0] + boss->C_Height)) > ((Myplayer.X + Myplayer.C_Width) - (boss->bossimage.X[0] + boss->C_Width) < 0 ? ((Myplayer.X + Myplayer.C_Width) - (boss->bossimage.X[0] + boss->C_Width))*-1 : (Myplayer.X + Myplayer.C_Width) - (boss->bossimage.X[0] + boss->C_Width)))
-			//{
-			//	if ((Myplayer.Y + Myplayer.C_Height) - (boss->bossimage.Y[0] + boss->C_Height) < 0)//è„
-			//	{
-			//		boss->muki = GAME_BOSS_FIRST_MUKI_U;
-			//		//boss->bossimage.Handle[0] = 12;
-			//	}
-			//	else//â∫
-			//	{
-			//		boss->muki = GAME_BOSS_FIRST_MUKI_D;
-			//		//boss->bossimage.Handle[0] = 0;
-			//	}
-			//}
-			//else
-			//{
-			//	if ((Myplayer.X + Myplayer.C_Width) - (boss->bossimage.X[0] + boss->C_Width) < 0)//ç∂
-			//	{
-			//		boss->muki = GAME_BOSS_FIRST_MUKI_L;
-			//		//boss->bossimage.Handle[0] = 4;
-			//	}
-			//	else//âE
-			//	{
-			//		boss->muki = GAME_BOSS_FIRST_MUKI_R;
-			//		//boss->bossimage.Handle[0] = 8;
-			//	}
-			//}
 
-		//if (boss->IsView == TRUE)	//ìGÇ™ï\é¶Ç≈Ç´ÇÈÇ∆Ç´ÇÕÅEÅEÅE
-		//{
-			//switch (boss->muki)
-			//{
-			//case GAME_BOSS_FIRST_MUKI_U:
 
-			//	if (boss->bossimage.Y[0] > Myplayer.Y)
-			//	{
-			//		boss->bossimage.Y[0] -= boss->Speed;//oni.bossimage.Y[0]
-			//	}
-			//	break;
+	switch (boss_move_dist)		//ìGÇÃà⁄ìÆï˚å¸Ç≤Ç∆Ç…èàóùÇï™ÇØÇÈ
+	{
 
-			//case GAME_BOSS_FIRST_MUKI_R:
+	case (int)BOSS_MOVE_UP:		//è„ÇÃÇ∆Ç´Ç±Ç±Ç©ÇÁ
 
-			//	if (boss->CanMoveRight == TRUE)	//âEÇ…ìÆÇØÇÈÇ∆Ç´ÇÕÅEÅEÅE
-			//	{
-			//		if (boss->bossimage.X[0] < Myplayer.X)
-			//		{
-			//			boss->bossimage.X[0] += boss->Speed;
-			//		}
-			//	}
-			//	
-			//	break;
 
-			//case GAME_BOSS_FIRST_MUKI_D:
+		boss->bossimage.Y[0] -= boss->Speed;
+		if (sa_y_ab < 0)
+			boss->bossimage.Y[0] = Myplayer.Y;
+		boss->muki = boss_move_dist;
+		//boss->NowHandleNum = boss_move_dist + boss->NowHandleCnt;
 
-			//	if (boss->bossimage.Y[0] < Myplayer.Y)
-			//	{
-			//		boss->bossimage.Y[0] += boss->Speed;
-			//	}
-			//	break;
+		break;					//è„ÇÃÇ∆Ç´Ç±Ç±Ç‹Ç≈
 
-			//case GAME_BOSS_FIRST_MUKI_L:
+	case (int)BOSS_MOVE_DOWN:		//â∫ÇÃÇ∆Ç´Ç±Ç±Ç©ÇÁ
 
-			//	if (boss->CanMoveLeft == TRUE)	//ç∂Ç…ìÆÇØÇÈÇ∆Ç´ÇÕÅEÅEÅE
-			//	{
-			//		if (boss->bossimage.X[0] > Myplayer.X)
-			//		{
-			//			boss->bossimage.X[0] -= boss->Speed;
-			//		}
-			//	}
-			//	
-			//	break;
+		boss->bossimage.Y[0] += boss->Speed;
+		boss->muki = boss_move_dist;
+		//boss->NowHandleNum = boss_move_dist + boss->NowHandleCnt;
 
-			//default:
-			//	break;
-			//}
+		break;					//â∫ÇÃÇ∆Ç´Ç±Ç±Ç‹Ç≈
 
-		//	switch (boss->muki)
-		//	{
-		//	case GAME_BOSS_FIRST_MUKI_U:
+	case (int)BOSS_MOVE_LEFT:		//ç∂ÇÃÇ∆Ç´Ç±Ç±Ç©ÇÁ
 
-		//		//if (Myplayer.ScrollOK_Y)
-		//		//{
-		//			boss->bossimage.Y[0] -= boss->Speed;//oni.bossimage.Y[0]
-		//		//}
-		//		break;
+		boss->muki = boss_move_dist;
+		//boss->NowHandleNum = boss_move_dist + boss->NowHandleCnt;
 
-		//	case GAME_BOSS_FIRST_MUKI_R:
+		if (boss->CanMoveLeft == TRUE)	//ç∂Ç…ìÆÇØÇÈÇ∆Ç´ÇÕÅEÅEÅE
+		{
+			boss->bossimage.X[0] -= boss->Speed;
+			if (sa_x_ab < 0)
+				boss->bossimage.X[0] = Myplayer.X;
+		}
 
-		//		if (boss->CanMoveRight == TRUE)	//âEÇ…ìÆÇØÇÈÇ∆Ç´ÇÕÅEÅEÅE
-		//		{
-		//				boss->bossimage.X[0] += boss->Speed;
-		//		}
+		break;					//ç∂ÇÃÇ∆Ç´Ç±Ç±Ç‹Ç≈
 
-		//		break;
+	case (int)BOSS_MOVE_RIGHT:		//âEÇÃÇ∆Ç´Ç±Ç±Ç©ÇÁ
 
-		//	case GAME_BOSS_FIRST_MUKI_D:
+		boss->muki = boss_move_dist;
+		//boss->NowHandleNum = boss_move_dist + boss->NowHandleCnt;
 
-		//			boss->bossimage.Y[0] += boss->Speed;
-		//		break;
+		if (boss->CanMoveRight == TRUE)	//âEÇ…ìÆÇØÇÈÇ∆Ç´ÇÕÅEÅEÅE
+		{
+			boss->bossimage.X[0] += boss->Speed;
+		}
 
-		//	case GAME_BOSS_FIRST_MUKI_L:
+		break;					//âEÇÃÇ∆Ç´Ç±Ç±Ç‹Ç≈
 
-		//		if (boss->CanMoveLeft == TRUE)	//ç∂Ç…ìÆÇØÇÈÇ∆Ç´ÇÕÅEÅEÅE
-		//		{
-		//				boss->bossimage.X[0] -= boss->Speed;
-		//		}
+	case (int)BOSS_MOVE_NONE:	//à⁄ìÆÇ»ÇµÇÃÇ∆Ç´
 
-		//		break;
+		boss->muki = GAME_BOSS_FIRST_MUKI_D;	//â∫å¸Ç´
 
-		//	default:
-		//		break;
-		//	}
+		break;					//à⁄ìÆÇ»ÇµÇÃÇ∆Ç´
 
-		//	MY_PLAY_ENEMY_MAP_COLLISION(boss);	//ìGÇ∆É}ÉbÉvÇ∆ÇÃê⁄êGä÷êî
 
-		//}
+	default:
+		break;
+	}
+
+
+	MY_PLAY_ENEMY_MAP_COLLISION(boss);	//ìGÇ∆É}ÉbÉvÇ∆ÇÃê⁄êGä÷êî
+
+
+	//if (((Myplayer.Y + Myplayer.C_Height) - (boss->bossimage.Y[0] + boss->C_Height) < 0 ? ((Myplayer.Y + Myplayer.C_Height) - (boss->bossimage.Y[0] + boss->C_Height))*-1 : (Myplayer.Y + Myplayer.C_Height) - (boss->bossimage.Y[0] + boss->C_Height)) > ((Myplayer.X + Myplayer.C_Width) - (boss->bossimage.X[0] + boss->C_Width) < 0 ? ((Myplayer.X + Myplayer.C_Width) - (boss->bossimage.X[0] + boss->C_Width))*-1 : (Myplayer.X + Myplayer.C_Width) - (boss->bossimage.X[0] + boss->C_Width)))
+	//{
+	//	if ((Myplayer.Y + Myplayer.C_Height) - (boss->bossimage.Y[0] + boss->C_Height) < 0)//è„
+	//	{
+	//		boss->muki = GAME_BOSS_FIRST_MUKI_U;
+	//		//boss->bossimage.Handle[0] = 12;
+	//	}
+	//	else//â∫
+	//	{
+	//		boss->muki = GAME_BOSS_FIRST_MUKI_D;
+	//		//boss->bossimage.Handle[0] = 0;
+	//	}
+	//}
+	//else
+	//{
+	//	if ((Myplayer.X + Myplayer.C_Width) - (boss->bossimage.X[0] + boss->C_Width) < 0)//ç∂
+	//	{
+	//		boss->muki = GAME_BOSS_FIRST_MUKI_L;
+	//		//boss->bossimage.Handle[0] = 4;
+	//	}
+	//	else//âE
+	//	{
+	//		boss->muki = GAME_BOSS_FIRST_MUKI_R;
+	//		//boss->bossimage.Handle[0] = 8;
+	//	}
+	//}
+
+//if (boss->IsView == TRUE)	//ìGÇ™ï\é¶Ç≈Ç´ÇÈÇ∆Ç´ÇÕÅEÅEÅE
+//{
+	//switch (boss->muki)
+	//{
+	//case GAME_BOSS_FIRST_MUKI_U:
+
+	//	if (boss->bossimage.Y[0] > Myplayer.Y)
+	//	{
+	//		boss->bossimage.Y[0] -= boss->Speed;//oni.bossimage.Y[0]
+	//	}
+	//	break;
+
+	//case GAME_BOSS_FIRST_MUKI_R:
+
+	//	if (boss->CanMoveRight == TRUE)	//âEÇ…ìÆÇØÇÈÇ∆Ç´ÇÕÅEÅEÅE
+	//	{
+	//		if (boss->bossimage.X[0] < Myplayer.X)
+	//		{
+	//			boss->bossimage.X[0] += boss->Speed;
+	//		}
+	//	}
+	//	
+	//	break;
+
+	//case GAME_BOSS_FIRST_MUKI_D:
+
+	//	if (boss->bossimage.Y[0] < Myplayer.Y)
+	//	{
+	//		boss->bossimage.Y[0] += boss->Speed;
+	//	}
+	//	break;
+
+	//case GAME_BOSS_FIRST_MUKI_L:
+
+	//	if (boss->CanMoveLeft == TRUE)	//ç∂Ç…ìÆÇØÇÈÇ∆Ç´ÇÕÅEÅEÅE
+	//	{
+	//		if (boss->bossimage.X[0] > Myplayer.X)
+	//		{
+	//			boss->bossimage.X[0] -= boss->Speed;
+	//		}
+	//	}
+	//	
+	//	break;
+
+	//default:
+	//	break;
+	//}
+
+//	switch (boss->muki)
+//	{
+//	case GAME_BOSS_FIRST_MUKI_U:
+
+//		//if (Myplayer.ScrollOK_Y)
+//		//{
+//			boss->bossimage.Y[0] -= boss->Speed;//oni.bossimage.Y[0]
+//		//}
+//		break;
+
+//	case GAME_BOSS_FIRST_MUKI_R:
+
+//		if (boss->CanMoveRight == TRUE)	//âEÇ…ìÆÇØÇÈÇ∆Ç´ÇÕÅEÅEÅE
+//		{
+//				boss->bossimage.X[0] += boss->Speed;
+//		}
+
+//		break;
+
+//	case GAME_BOSS_FIRST_MUKI_D:
+
+//			boss->bossimage.Y[0] += boss->Speed;
+//		break;
+
+//	case GAME_BOSS_FIRST_MUKI_L:
+
+//		if (boss->CanMoveLeft == TRUE)	//ç∂Ç…ìÆÇØÇÈÇ∆Ç´ÇÕÅEÅEÅE
+//		{
+//				boss->bossimage.X[0] -= boss->Speed;
+//		}
+
+//		break;
+
+//	default:
+//		break;
+//	}
+
+//	MY_PLAY_ENEMY_MAP_COLLISION(boss);	//ìGÇ∆É}ÉbÉvÇ∆ÇÃê⁄êGä÷êî
+
+//}
 
 	return;
 }
@@ -2479,7 +2530,7 @@ VOID MY_PLAY_ENEMY_OPERATION_DETAIL(BOSS *boss,CHARADATA *c)
 //########## ìGÇëÄçÏÇ∑ÇÈä÷êî ##########
 VOID MY_PLAY_ENEMY_OPERATION(VOID)
 {
-	MY_PLAY_ENEMY_OPERATION_DETAIL(&oni,&Myplayer);	//bossÇÃêÊì™ÉAÉhÉåÉXÇì¸ÇÍÇÈ
+	MY_PLAY_ENEMY_OPERATION_DETAIL(&oni, &Myplayer);	//bossÇÃêÊì™ÉAÉhÉåÉXÇì¸ÇÍÇÈ
 
 	return;
 }
@@ -2542,9 +2593,9 @@ VOID MY_PLAY_ENEMY_MAP_COLLISION(BOSS *e)
 }
 
 //########## ìGÇ∆ÉLÉÉÉâÇ∆ÇÃê⁄êGä÷êî ##########
-VOID MY_PLAY_ENEMY_CHARA_COLLISION(BOSS *e,CHARADATA *c)
+VOID MY_PLAY_ENEMY_CHARA_COLLISION(BOSS *e, CHARADATA *c)
 {
-	
+
 
 	MY_SET_ENEMY_ATARI(e);			//ìGÇÃìñÇΩÇËîªíËÇÃóÃàÊÇê›íË
 	e->atariRect.left -= 4;			//è≠ÇµÅAìGÇÃìñÇΩÇËîªíËÇÃóÃàÊÇç∂Ç…Ç∏ÇÁÇ∑
@@ -2554,7 +2605,7 @@ VOID MY_PLAY_ENEMY_CHARA_COLLISION(BOSS *e,CHARADATA *c)
 	c->atariRect.left -= 4;			//è≠ÇµÅAìGÇÃìñÇΩÇËîªíËÇÃóÃàÊÇç∂Ç…Ç∏ÇÁÇ∑
 	c->atariRect.right -= 4;		//è≠ÇµÅAìGÇÃìñÇΩÇËîªíËÇÃóÃàÊÇç∂Ç…Ç∏ÇÁÇ∑
 
-	
+
 	static int x = 0, y = 0;
 
 	//if (MY_CHECK_RECT_ATARI_PLAYER_BOSS_ATARIBASHO(e->atariRect, c->atariRect, &x, &y) == TRUE)	//ÉvÉåÉCÉÑÅ[Ç∆É{ÉXÇ™ìñÇΩÇ¡ÇΩéû
